@@ -26,6 +26,7 @@ namespace CreateCommonForms
 			WriteLine ("");
 			BeginBlock ("namespace Common.Forms");
 			
+			
 			var Windows = typeof(ButtonBase).Assembly;
 			var enums = Windows.GetTypes ().Where (x => x.IsEnum);
 			var wClasses = Windows.GetTypes ().Where (x => x.IsPublic && x.IsClass && !x.Name.Contains("Application")).ToList ();
@@ -38,8 +39,14 @@ namespace CreateCommonForms
 			{
 				WriteClass (theClass, mClasses.Where (x => x.Name == theClass.Name).FirstOrDefault ());
 				Console.WriteLine (theClass.FullName);
-				
 			}
+			BeginRegion("Interfaces");
+			foreach(var theClass in Windows.GetTypes().Where(x=> x.IsInterface).Where(x=> x.IsPublic))
+			{
+				WriteInterface (theClass);
+				Console.WriteLine (theClass.FullName);
+			}
+			EndRegion();
 			
 			EndBlock();
 	        m_writer.Flush();
@@ -47,7 +54,7 @@ namespace CreateCommonForms
 		}
 		public static void WriteClass (Type winType, Type macType)
 		{
-			var interfaces = winType.GetInterfaces();
+			var interfaces = winType.GetInterfaces().Where(x=> x.IsPublic);
 			
 			//if delegate
 			if(typeof(Delegate).IsAssignableFrom(winType))
@@ -60,7 +67,7 @@ namespace CreateCommonForms
 				if(winType.IsSealed)
 					WriteSealedClass(winType,macType);
 				else	
-					BeginBlock("public class " + winType.Name + " : " + winType.Namespace + "." + winType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> x.Name).ToArray())): ""));
+					BeginBlock("public class " + winType.Name + " : " + winType.Namespace + "." + winType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> (x.Namespace + "." + x.Name)).ToArray())): ""));
 				WriteConstructors(winType,macType);
 				WriteClassFields(winType,macType);
 				WriteClassProperties(winType,macType);
@@ -69,6 +76,13 @@ namespace CreateCommonForms
 				EndBlock();
 			}
 		}
+		
+		public static void WriteInterface(Type winType)
+		{
+			BeginBlock("public interface " + winType.Name + " : " + winType.Namespace + "." + winType.Name );
+			EndBlock();
+		}
+		
 		public static void WriteDelegate(Type winType)
 		{		
 			var test = winType.GetMembers().Where(x => x.Name == "IHTMLWindow2").FirstOrDefault();
@@ -87,6 +101,7 @@ namespace CreateCommonForms
 		
 			
 		}
+		
 		public static void WriteNonInherit(Type winType, Type macType)
 		{
 			BeginBlock("public class " + winType.Name );
@@ -96,6 +111,7 @@ namespace CreateCommonForms
 			EndBlock();
 			//TODO:
 		}
+		
 		public static void WriteSealedClass(Type winType,Type macType)
 		{
 			//TODO:
@@ -200,19 +216,30 @@ namespace CreateCommonForms
 			foreach(var propName in propsInclude)
 			{
 				var prop = wProps.Where(x=> x.Name == propName).First();
-				var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
-				WriteLine(line);
+				writeClassProperty(prop,true);
 			}
 			
 			BeginRegion("Excluded");
 			foreach(var propName in propsExclude)
 			{
 				var prop = wProps.Where(x=> x.Name == propName).First();
-				var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
-				WriteObsoleteLine(line);
+				writeClassProperty(prop,false);
 			}
 			EndRegion();
 			EndRegion();		
+		}
+		private static void writeClassProperty(PropertyInfo prop,bool included)
+		{
+			if(included)
+			{
+				var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
+				WriteLine(line);
+			}
+			else
+			{
+				var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
+				WriteObsoleteLine(line);
+			}
 		}
 		
 		public static void WriteClassFields(Type winType, Type macType)
