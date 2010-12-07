@@ -52,46 +52,46 @@ namespace CreateCommonForms
 	        m_writer.Flush();
 	        m_writer.Close();
 		}
-		public static void WriteClass (Type winType, Type macType)
+		public static void WriteClass (Type includeType, Type exludeType)
 		{
-			var interfaces = winType.GetInterfaces().Where(x=> x.IsPublic);
+			var interfaces = includeType.GetInterfaces().Where(x=> x.IsPublic);
 			
 			//if delegate
-			if(typeof(Delegate).IsAssignableFrom(winType))
-					WriteDelegate(winType);
+			if(typeof(Delegate).IsAssignableFrom(includeType))
+					WriteDelegate(includeType);
 			// If static with no constructors
-			else if (winType.GetConstructors().Count() == 0)
-				WriteNonInherit(winType,macType);
+			else if (includeType.GetConstructors().Count() == 0)
+				WriteNonInherit(includeType,exludeType);
 			else
 			{
-				if(winType.IsSealed)
-					WriteSealedClass(winType,macType);
+				if(includeType.IsSealed)
+					WriteSealedClass(includeType,exludeType);
 				else	
-					BeginBlock("public class " + winType.Name + " : " + winType.Namespace + "." + winType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> (x.Namespace + "." + x.Name)).ToArray())): ""));
-				WriteConstructors(winType,macType);
-				WriteClassFields(winType,macType);
-				WriteClassProperties(winType,macType);
-				WriteClassEvents(winType,macType);
-				WriteClassMethods(winType,macType);
+					BeginBlock("public class " + includeType.Name + " : " + includeType.Namespace + "." + includeType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> (x.Namespace + "." + x.Name)).ToArray())): ""));
+				WriteConstructors(includeType,exludeType);
+				WriteClassFields(includeType,exludeType);
+				WriteClassProperties(includeType,exludeType);
+				WriteClassEvents(includeType,exludeType);
+				WriteClassMethods(includeType,exludeType);
 				EndBlock();
 			}
 		}
 		
-		public static void WriteInterface(Type winType)
+		public static void WriteInterface(Type type)
 		{
-			BeginBlock("public interface " + winType.Name + " : " + winType.Namespace + "." + winType.Name );
+			BeginBlock("public interface " + type.Name + " : " +type.Namespace + "." + type.Name );
 			EndBlock();
 		}
 		
-		public static void WriteDelegate(Type winType)
+		public static void WriteDelegate(Type type)
 		{		
-			var test = winType.GetMembers().Where(x => x.Name == "IHTMLWindow2").FirstOrDefault();
-			var members = winType.GetMember("Invoke");
+			var test = type.GetMembers().Where(x => x.Name == "IHTMLWindow2").FirstOrDefault();
+			var members = type.GetMember("Invoke");
 			var invoke = members.FirstOrDefault().ToString();
 			var newString = "public delegate ";
 			var invokeIndex = invoke.IndexOf("Invoke");
 			newString += invoke.Substring(0,invokeIndex).ToLower();
-			newString += " " + winType.Name + " ";
+			newString += " " + type.Name + " ";
 			var endingString = invoke.Substring(invokeIndex + 6);
 			endingString = endingString.Insert(endingString.IndexOf(",")," sender ");
 			newString += endingString.Insert(endingString.IndexOf(")")," e ") + ";";
@@ -102,12 +102,12 @@ namespace CreateCommonForms
 			
 		}
 		
-		public static void WriteNonInherit(Type winType, Type macType)
+		public static void WriteNonInherit(Type includeType, Type excludeType)
 		{
-			BeginBlock("public class " + winType.Name );
+			BeginBlock("public class " + includeType.Name );
 			
-			WriteClassProperties(winType,macType);
-			WriteClassMethods(winType,macType);
+			WriteClassProperties(includeType,excludeType);
+			WriteClassMethods(includeType,excludeType);
 			EndBlock();
 			//TODO:
 		}
@@ -116,20 +116,20 @@ namespace CreateCommonForms
 		{
 			//TODO:
 		}
-		public static void WriteConstructors(Type winType,Type macType)
+		public static void WriteConstructors(Type includeType,Type excludeType)
 		{
 			BeginRegion("Constructors");
-			var wCons = winType.GetConstructors();
-			var mCons = macType.GetConstructors();
-			var cons = wCons.Select(x=> x.ToString()).Intersect(mCons.Select(y=> y.ToString())).ToList();
-			var con2 = wCons.Select(x=> x.ToString()).Except(mCons.Select(y=> y.ToString())).ToList();
+			var iCons = includeType.GetConstructors();
+			var eCons = excludeType.GetConstructors();
+			var cons = iCons.Select(x=> x.ToString()).Intersect(eCons.Select(y=> y.ToString())).ToList();
+			var con2 = iCons.Select(x=> x.ToString()).Except(eCons.Select(y=> y.ToString())).ToList();
 			
-			foreach(var con in wCons.Where(x=> cons.Contains(x.ToString())))
+			foreach(var con in iCons.Where(x=> cons.Contains(x.ToString())))
 			{
 				var theParams = con.GetParameters().OrderBy(x=> x.Position);
-				if(theParams.Count() > 0 || wCons.Count() > 1 )
+				if(theParams.Count() > 0 || iCons.Count() > 1 )
 				{
-					string line = "public " + winType.Name;
+					string line = "public " + includeType.Name;
 					string paramString = " (";
 					string baseParamString = " : base (";
 					foreach(var p in theParams)
@@ -150,12 +150,12 @@ namespace CreateCommonForms
 				}
 			}
 			//Not Supported
-			foreach(var con in wCons.Where(x=> con2.Contains(x.ToString())))
+			foreach(var con in iCons.Where(x=> con2.Contains(x.ToString())))
 			{
 				var theParams = con.GetParameters().OrderBy(x=> x.Position);
-				if(theParams.Count() > 0 || wCons.Count() > 1 )
+				if(theParams.Count() > 0 || iCons.Count() > 1 )
 				{
-					string line = "public " + winType.Name;
+					string line = "public " + includeType.Name;
 					string paramString = " (";
 					string baseParamString = " : base (";
 					foreach(var p in theParams)
@@ -177,25 +177,27 @@ namespace CreateCommonForms
 			}
 			EndRegion();
 		}
-		public static void WriteClassEvents(Type winType,Type macType)
+		public static void WriteClassEvents(Type includeType,Type excludeType)
 		{
 			BeginRegion("Events");
-			var wEvents = winType.GetEvents();
-			var mEvents = macType.GetEvents();
-			var eventsInclude = wEvents.Select(x=> x.Name).Intersect(mEvents.Select(y=> y.Name)).Distinct().ToList();
-			var eventsExclude = wEvents.Select(x=> x.Name).Except(eventsInclude).Distinct().ToList();
+			var iEvents = includeType.GetEvents();
+			var eEvents = excludeType.GetEvents();
+			var eventsInclude = iEvents.Select(x=> x.Name).Intersect(eEvents.Select(y=> y.Name)).Distinct().ToList();
+			var eventsExclude = iEvents.Select(x=> x.Name).Except(eventsInclude).Distinct().ToList();
 			
+			/*
 			foreach(var eventName in eventsInclude.OrderBy(x=> x))
 			{
 				var theEvent = wEvents.Where(x=> x.Name == eventName).First();
 				string line = "public new " + theEvent.EventHandlerType + " " + theEvent.Name + " { get;set;}";
 				WriteLine(line);
 			}
+			*/
 			
 			BeginRegion("Excluded");
 			foreach(var eventName in eventsExclude.OrderBy(x=> x))
 			{
-				var theEvent = wEvents.Where(x=> x.Name == eventName).First();
+				var theEvent = iEvents.Where(x=> x.Name == eventName).First();
 				string line = "public new " + theEvent.EventHandlerType + " " + theEvent.Name + " { get;set;}";
 				WriteObsoleteLine(line);
 			}
@@ -204,25 +206,27 @@ namespace CreateCommonForms
 			
 		}
 		
-		public static void WriteClassProperties(Type winType, Type macType)
+		public static void WriteClassProperties(Type includeType, Type excludeType)
 		{
 			BeginRegion("Properties");
-			var wProps = winType.GetProperties();
-			var mProps = macType.GetProperties();
-			var propsInclude = wProps.Select(x=> x.Name).Intersect(mProps.Select(y=> y.Name)).Distinct().ToList();
-			var propsExclude = wProps.Select(x=> x.Name).Except(propsInclude).Distinct().ToList();
+			var iProps = includeType.GetProperties();
+			var eProps = excludeType.GetProperties();
+			var propsInclude = iProps.Select(x=> x.Name).Intersect(eProps.Select(y=> y.Name)).Distinct().ToList();
+			var propsExclude = iProps.Select(x=> x.Name).Except(propsInclude).Distinct().ToList();
 			
+			/*
 			//Included
 			foreach(var propName in propsInclude)
 			{
 				var prop = wProps.Where(x=> x.Name == propName).First();
 				writeClassProperty(prop,true);
 			}
+			*/
 			
 			BeginRegion("Excluded");
 			foreach(var propName in propsExclude)
 			{
-				var prop = wProps.Where(x=> x.Name == propName).First();
+				var prop = iProps.Where(x=> x.Name == propName).First();
 				writeClassProperty(prop,false);
 			}
 			EndRegion();
@@ -230,38 +234,41 @@ namespace CreateCommonForms
 		}
 		private static void writeClassProperty(PropertyInfo prop,bool included)
 		{
+			/*
 			if(included)
 			{
 				var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
 				WriteLine(line);
 			}
 			else
-			{
-				var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
-				WriteObsoleteLine(line);
-			}
+			*/
+			
+			var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
+			WriteObsoleteLine(line);
+			
 		}
 		
-		public static void WriteClassFields(Type winType, Type macType)
+		public static void WriteClassFields(Type includeType, Type excludeType)
 		{
 			BeginRegion("Fields");
-			var wFields = winType.GetFields();
-			var mFields = macType.GetFields();
-			var fieldsInclude = wFields.Select(x=> x.Name).Intersect(mFields.Select(y=> y.Name)).Distinct().ToList();
-			var fieldsExclude = wFields.Select(x=> x.Name).Except(fieldsInclude).Distinct().ToList();
-			
+			var iFields = includeType.GetFields();
+			var eFields = excludeType.GetFields();
+			var fieldsInclude = iFields.Select(x=> x.Name).Intersect(eFields.Select(y=> y.Name)).Distinct().ToList();
+			var fieldsExclude = iFields.Select(x=> x.Name).Except(fieldsInclude).Distinct().ToList();
+			/*
 			foreach(var fieldName in fieldsInclude)
 			{
 				var field = wFields.Where(x=> x.Name == fieldName).First();
 				var line = "public new " + field.FieldType.FullName.Replace("+",".") + " " + field.Name + ";";
 				WriteLine(line);
-			}
+			
+			*/
 			
 			BeginRegion("Exluded");
 			foreach( var fieldName in fieldsExclude)
 			{
 				
-				var field = wFields.Where(x=> x.Name == fieldName).First();
+				var field = iFields.Where(x=> x.Name == fieldName).First();
 				var line = "public new " + field.FieldType.FullName.Replace("+",".") + " " + field.Name + ";";
 				WriteObsoleteLine(line);
 			}
@@ -269,17 +276,17 @@ namespace CreateCommonForms
 			EndRegion();
 		}
 		
-		public static void WriteClassMethods(Type winType, Type macType)
+		public static void WriteClassMethods(Type includeType, Type excludeType)
 		{
 			BeginRegion("Excluded Methods");
-			var wMethods = winType.GetMethods().Where(x=> !x.IsHideBySig).ToList();
-			var mMethods = macType.GetMethods();			
-			var methodsInclude = wMethods.Select(x=> x.Name).Intersect(mMethods.Select(y=> y.Name)).Distinct().ToList();
-			var methodsExclude = wMethods.Select(x=> x.Name).Except(methodsInclude).Distinct().ToList();
+			var iMethods = includeType.GetMethods().Where(x=> !x.IsHideBySig).ToList();
+			var eMethods = excludeType.GetMethods();			
+			var methodsInclude = iMethods.Select(x=> x.Name).Intersect(eMethods.Select(y=> y.Name)).Distinct().ToList();
+			var methodsExclude = iMethods.Select(x=> x.Name).Except(methodsInclude).Distinct().ToList();
 			
 			foreach(var methodName in methodsExclude)
 			{
-				var method = wMethods.Where(x=> x.Name == methodName).First();
+				var method = iMethods.Where(x=> x.Name == methodName).First();
 				string line = "public " + (method.IsStatic ? "static " : " ") +  (method.IsVirtual ? " override " : " new ");
 				line += method.ReturnType.FullName.Replace("+",".") + " ";
 				line += method.Name;

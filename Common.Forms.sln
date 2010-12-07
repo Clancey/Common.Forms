@@ -7,12 +7,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateCommonForms", "Create
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoMac.Windows.Forms", "..\MonoMac.Windows.Form\MonoMac.Windows.Forms\MonoMac.Windows.Forms.csproj", "{FFD271D2-67B3-4FAB-99BF-8E28BB6F0B76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Forms(mac)", "Common.Forms(mac)\Common.Forms(mac).csproj", "{B34B5C0E-2995-4FA1-966C-B52C5DE005E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B34B5C0E-2995-4FA1-966C-B52C5DE005E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34B5C0E-2995-4FA1-966C-B52C5DE005E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34B5C0E-2995-4FA1-966C-B52C5DE005E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34B5C0E-2995-4FA1-966C-B52C5DE005E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C92D71B6-23C1-4F92-8EAD-57C693556FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C92D71B6-23C1-4F92-8EAD-57C693556FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C92D71B6-23C1-4F92-8EAD-57C693556FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
