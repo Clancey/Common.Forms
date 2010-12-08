@@ -28,6 +28,7 @@ namespace CreateCommonForms
 			m_writer = new StreamWriter(filePath);// File.Create (filePath);
 			WriteLine ("using System;");
 			WriteLine ("using System.Windows.Forms;");
+			WriteLine ("using System.Drawing;");
 			//WriteLine ("using System.Windows.Forms;");
 			WriteLine ("");
 			BeginBlock ("namespace Common.Forms");
@@ -109,7 +110,7 @@ namespace CreateCommonForms
 			List<string> values = new List<string>();
 			foreach(var enumName in Enum.GetNames(theEnum))
 			{
-				var enumValue = enumName + " = " + theEnum.Namespace + "." + theEnum.Name + "." + enumName + "," ;
+				var enumValue = enumName + " = " + (theEnum.Namespace.Contains("System.Windows.Forms") ? (theEnum.Namespace + ".") : "") + theEnum.Name + "." + enumName + "," ;
 				WriteLine(enumValue);
 			}
 			EndBlock();
@@ -353,7 +354,7 @@ namespace CreateCommonForms
 		public static void writeMethod(Type includeType, MethodInfo method, bool include)
 		{
 			string line = "public " + (method.IsStatic ? "static " : " ") +  (method.IsVirtual ? " override " : " new ");
-				line += method.ReturnType.FullName.Replace("+",".") + " ";
+				line += (method.ReturnType.Namespace.Contains("System.Windows.Forms") ? (method.ReturnType.Namespace + ".") : "") +  method.ReturnType.Name + " ";
 				line += method.Name;
 				
 				string paramNames  = "(";

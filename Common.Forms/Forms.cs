@@ -1,15 +1,15 @@
 using System;
 namespace Common.Forms
 {
-	public partial class Forms : System.Windows.Forms.Form
+	public partial class Form : System.Windows.Forms.Form
 	{
-		public new DialogResult ShowDialog()
+		public new Common.Forms.DialogResult ShowDialog()
 		{
-			return (DialogResult)base.ShowDialog();	
+			return (Common.Forms.DialogResult)base.ShowDialog();	
 		}
-		public new DialogResult ShowDialog(IWin32Window owner)
+		public new Common.Forms.DialogResult ShowDialog(IWin32Window owner)
 		{
-			return (DialogResult)base.ShowDialog(owner);	
+			return (Common.Forms.DialogResult)base.ShowDialog(owner);	
 		}
 	}
 }

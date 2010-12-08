@@ -1,9 +1,10 @@
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Common.Forms
 {
-	public partial class Button : System.Windows.Forms.Button,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IButtonControl
+	public partial class Button : System.Windows.Forms.Button,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget,System.Windows.Forms.IButtonControl
 	{
 		#region Constructors
 		#endregion
@@ -287,11 +288,11 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void NotifyDefault (System.Boolean value) { base.NotifyDefault(value);}
+		public   override Void NotifyDefault (System.Boolean value) { base.NotifyDefault(value);}
 		#endregion
 	}
 	
-	public partial class CheckBox : System.Windows.Forms.CheckBox,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class CheckBox : System.Windows.Forms.CheckBox,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -587,7 +588,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class CheckedListBox : System.Windows.Forms.CheckedListBox,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class CheckedListBox : System.Windows.Forms.CheckedListBox,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -926,17 +927,17 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Boolean GetItemChecked (System.Int32 index) {return  base.GetItemChecked(index);}
+		public   new Boolean GetItemChecked (System.Int32 index) {return  base.GetItemChecked(index);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   new System.Windows.Forms.CheckState GetItemCheckState (System.Int32 index) {return  base.GetItemCheckState(index);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SetItemChecked (System.Int32 index , System.Boolean value) { base.SetItemChecked(index , value);}
+		public   new Void SetItemChecked (System.Int32 index , System.Boolean value) { base.SetItemChecked(index , value);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SetItemCheckState (System.Int32 index , System.Windows.Forms.CheckState value) { base.SetItemCheckState(index , value);}
+		public   new Void SetItemCheckState (System.Int32 index , System.Windows.Forms.CheckState value) { base.SetItemCheckState(index , value);}
 		#endregion
 	}
 	
-	public partial class ComboBox : System.Windows.Forms.ComboBox,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class ComboBox : System.Windows.Forms.ComboBox,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -1265,23 +1266,23 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void BeginUpdate () { base.BeginUpdate();}
+		public   new Void BeginUpdate () { base.BeginUpdate();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void EndUpdate () { base.EndUpdate();}
+		public   new Void EndUpdate () { base.EndUpdate();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Int32 FindString (System.String s) {return  base.FindString(s);}
+		public   new Int32 FindString (System.String s) {return  base.FindString(s);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Int32 FindStringExact (System.String s) {return  base.FindStringExact(s);}
+		public   new Int32 FindStringExact (System.String s) {return  base.FindStringExact(s);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Int32 GetItemHeight (System.Int32 index) {return  base.GetItemHeight(index);}
+		public   new Int32 GetItemHeight (System.Int32 index) {return  base.GetItemHeight(index);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetText () { base.ResetText();}
+		public   override Void ResetText () { base.ResetText();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SelectAll () { base.SelectAll();}
+		public   new Void SelectAll () { base.SelectAll();}
 		#endregion
 	}
 	
-	public partial class Control : System.Windows.Forms.Control,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class Control : System.Windows.Forms.Control,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		public Control () : base ()
@@ -1609,31 +1610,31 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void DrawToBitmap (System.Drawing.Bitmap bitmap , System.Drawing.Rectangle targetBounds) { base.DrawToBitmap(bitmap , targetBounds);}
+		public   new Void DrawToBitmap (System.Drawing.Bitmap bitmap , System.Drawing.Rectangle targetBounds) { base.DrawToBitmap(bitmap , targetBounds);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public static  new System.Windows.Forms.Control FromChildHandle (System.IntPtr handle) {return System.Windows.Forms.Control.FromChildHandle(handle);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public static  new System.Windows.Forms.Control FromHandle (System.IntPtr handle) {return System.Windows.Forms.Control.FromHandle(handle);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public static  new System.Boolean IsKeyLocked (System.Windows.Forms.Keys keyVal) {return System.Windows.Forms.Control.IsKeyLocked(keyVal);}
+		public static  new Boolean IsKeyLocked (System.Windows.Forms.Keys keyVal) {return System.Windows.Forms.Control.IsKeyLocked(keyVal);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public static  new System.Boolean IsMnemonic (System.Char charCode , System.String text) {return System.Windows.Forms.Control.IsMnemonic(charCode , text);}
+		public static  new Boolean IsMnemonic (System.Char charCode , System.String text) {return System.Windows.Forms.Control.IsMnemonic(charCode , text);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.IAsyncResult BeginInvoke (System.Delegate method) {return  base.BeginInvoke(method);}
+		public   new IAsyncResult BeginInvoke (System.Delegate method) {return  base.BeginInvoke(method);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void BringToFront () { base.BringToFront();}
+		public   new Void BringToFront () { base.BringToFront();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Boolean Contains (System.Windows.Forms.Control ctl) {return  base.Contains(ctl);}
+		public   new Boolean Contains (System.Windows.Forms.Control ctl) {return  base.Contains(ctl);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void CreateControl () { base.CreateControl();}
+		public   new Void CreateControl () { base.CreateControl();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Drawing.Graphics CreateGraphics () {return  base.CreateGraphics();}
+		public   new Graphics CreateGraphics () {return  base.CreateGraphics();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   new System.Windows.Forms.DragDropEffects DoDragDrop (System.Object data , System.Windows.Forms.DragDropEffects allowedEffects) {return  base.DoDragDrop(data , allowedEffects);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   new System.Windows.Forms.Form FindForm () {return  base.FindForm();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Boolean Focus () {return  base.Focus();}
+		public   new Boolean Focus () {return  base.Focus();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   new System.Windows.Forms.Control GetChildAtPoint (System.Drawing.Point pt) {return  base.GetChildAtPoint(pt);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1641,59 +1642,59 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   new System.Windows.Forms.Control GetNextControl (System.Windows.Forms.Control ctl , System.Boolean forward) {return  base.GetNextControl(ctl , forward);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Drawing.Size GetPreferredSize (System.Drawing.Size proposedSize) {return  base.GetPreferredSize(proposedSize);}
+		public   override Size GetPreferredSize (System.Drawing.Size proposedSize) {return  base.GetPreferredSize(proposedSize);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Hide () { base.Hide();}
+		public   new Void Hide () { base.Hide();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Invalidate () { base.Invalidate();}
+		public   new Void Invalidate () { base.Invalidate();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Object Invoke (System.Delegate method) {return  base.Invoke(method);}
+		public   new Object Invoke (System.Delegate method) {return  base.Invoke(method);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void PerformLayout () { base.PerformLayout();}
+		public   new Void PerformLayout () { base.PerformLayout();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Drawing.Point PointToClient (System.Drawing.Point p) {return  base.PointToClient(p);}
+		public   new Point PointToClient (System.Drawing.Point p) {return  base.PointToClient(p);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Drawing.Point PointToScreen (System.Drawing.Point p) {return  base.PointToScreen(p);}
+		public   new Point PointToScreen (System.Drawing.Point p) {return  base.PointToScreen(p);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Drawing.Rectangle RectangleToClient (System.Drawing.Rectangle r) {return  base.RectangleToClient(r);}
+		public   new Rectangle RectangleToClient (System.Drawing.Rectangle r) {return  base.RectangleToClient(r);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Drawing.Rectangle RectangleToScreen (System.Drawing.Rectangle r) {return  base.RectangleToScreen(r);}
+		public   new Rectangle RectangleToScreen (System.Drawing.Rectangle r) {return  base.RectangleToScreen(r);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void Refresh () { base.Refresh();}
+		public   override Void Refresh () { base.Refresh();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetBackColor () { base.ResetBackColor();}
+		public   override Void ResetBackColor () { base.ResetBackColor();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void ResetBindings () { base.ResetBindings();}
+		public   new Void ResetBindings () { base.ResetBindings();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetCursor () { base.ResetCursor();}
+		public   override Void ResetCursor () { base.ResetCursor();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetFont () { base.ResetFont();}
+		public   override Void ResetFont () { base.ResetFont();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetForeColor () { base.ResetForeColor();}
+		public   override Void ResetForeColor () { base.ResetForeColor();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void ResetImeMode () { base.ResetImeMode();}
+		public   new Void ResetImeMode () { base.ResetImeMode();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetRightToLeft () { base.ResetRightToLeft();}
+		public   override Void ResetRightToLeft () { base.ResetRightToLeft();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetText () { base.ResetText();}
+		public   override Void ResetText () { base.ResetText();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void ResumeLayout () { base.ResumeLayout();}
+		public   new Void ResumeLayout () { base.ResumeLayout();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Scale (System.Single ratio) { base.Scale(ratio);}
+		public   new Void Scale (System.Single ratio) { base.Scale(ratio);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Select () { base.Select();}
+		public   new Void Select () { base.Select();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Boolean SelectNextControl (System.Windows.Forms.Control ctl , System.Boolean forward , System.Boolean tabStopOnly , System.Boolean nested , System.Boolean wrap) {return  base.SelectNextControl(ctl , forward , tabStopOnly , nested , wrap);}
+		public   new Boolean SelectNextControl (System.Windows.Forms.Control ctl , System.Boolean forward , System.Boolean tabStopOnly , System.Boolean nested , System.Boolean wrap) {return  base.SelectNextControl(ctl , forward , tabStopOnly , nested , wrap);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SendToBack () { base.SendToBack();}
+		public   new Void SendToBack () { base.SendToBack();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SetBounds (System.Int32 x , System.Int32 y , System.Int32 width , System.Int32 height) { base.SetBounds(x , y , width , height);}
+		public   new Void SetBounds (System.Int32 x , System.Int32 y , System.Int32 width , System.Int32 height) { base.SetBounds(x , y , width , height);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Show () { base.Show();}
+		public   new Void Show () { base.Show();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SuspendLayout () { base.SuspendLayout();}
+		public   new Void SuspendLayout () { base.SuspendLayout();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Update () { base.Update();}
+		public   new Void Update () { base.Update();}
 		#endregion
 	}
 	
@@ -1781,7 +1782,7 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Object Clone () {return  base.Clone();}
+		public   override Object Clone () {return  base.Clone();}
 		#endregion
 	}
 	
@@ -1873,7 +1874,7 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Object Clone () {return  base.Clone();}
+		public   override Object Clone () {return  base.Clone();}
 		#endregion
 	}
 	
@@ -1980,13 +1981,13 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Object Clone () {return  base.Clone();}
+		public   override Object Clone () {return  base.Clone();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Object GetEditingCellFormattedValue (System.Windows.Forms.DataGridViewDataErrorContexts context) {return  base.GetEditingCellFormattedValue(context);}
+		public   override Object GetEditingCellFormattedValue (System.Windows.Forms.DataGridViewDataErrorContexts context) {return  base.GetEditingCellFormattedValue(context);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Object ParseFormattedValue (System.Object formattedValue , System.Windows.Forms.DataGridViewCellStyle cellStyle , System.ComponentModel.TypeConverter formattedValueTypeConverter , System.ComponentModel.TypeConverter valueTypeConverter) {return  base.ParseFormattedValue(formattedValue , cellStyle , formattedValueTypeConverter , valueTypeConverter);}
+		public   override Object ParseFormattedValue (System.Object formattedValue , System.Windows.Forms.DataGridViewCellStyle cellStyle , System.ComponentModel.TypeConverter formattedValueTypeConverter , System.ComponentModel.TypeConverter valueTypeConverter) {return  base.ParseFormattedValue(formattedValue , cellStyle , formattedValueTypeConverter , valueTypeConverter);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void PrepareEditingCellForEdit (System.Boolean selectAll) { base.PrepareEditingCellForEdit(selectAll);}
+		public   override Void PrepareEditingCellForEdit (System.Boolean selectAll) { base.PrepareEditingCellForEdit(selectAll);}
 		#endregion
 	}
 	
@@ -2093,7 +2094,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class Form : System.Windows.Forms.Form,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.Windows.Forms.IContainerControl,System.ComponentModel.IComponent
+	public partial class Form : System.Windows.Forms.Form,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -2495,21 +2496,21 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public static  new System.Drawing.SizeF GetAutoScaleSize (System.Drawing.Font font) {return System.Windows.Forms.Form.GetAutoScaleSize(font);}
+		public static  new SizeF GetAutoScaleSize (System.Drawing.Font font) {return System.Windows.Forms.Form.GetAutoScaleSize(font);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Activate () { base.Activate();}
+		public   new Void Activate () { base.Activate();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void AddOwnedForm (System.Windows.Forms.Form ownedForm) { base.AddOwnedForm(ownedForm);}
+		public   new Void AddOwnedForm (System.Windows.Forms.Form ownedForm) { base.AddOwnedForm(ownedForm);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void LayoutMdi (System.Windows.Forms.MdiLayout value) { base.LayoutMdi(value);}
+		public   new Void LayoutMdi (System.Windows.Forms.MdiLayout value) { base.LayoutMdi(value);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void RemoveOwnedForm (System.Windows.Forms.Form ownedForm) { base.RemoveOwnedForm(ownedForm);}
+		public   new Void RemoveOwnedForm (System.Windows.Forms.Form ownedForm) { base.RemoveOwnedForm(ownedForm);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SetDesktopBounds (System.Int32 x , System.Int32 y , System.Int32 width , System.Int32 height) { base.SetDesktopBounds(x , y , width , height);}
+		public   new Void SetDesktopBounds (System.Int32 x , System.Int32 y , System.Int32 width , System.Int32 height) { base.SetDesktopBounds(x , y , width , height);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SetDesktopLocation (System.Int32 x , System.Int32 y) { base.SetDesktopLocation(x , y);}
+		public   new Void SetDesktopLocation (System.Int32 x , System.Int32 y) { base.SetDesktopLocation(x , y);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Boolean ValidateChildren () {return  base.ValidateChildren();}
+		public   override Boolean ValidateChildren () {return  base.ValidateChildren();}
 		#endregion
 	}
 	
@@ -2566,7 +2567,7 @@ namespace Common.Forms
 	
 	public delegate void  KeyPressEventHandler (System.Object sender , Common.Forms.KeyPressEventArgs e );
 	
-	public partial class Label : System.Windows.Forms.Label,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class Label : System.Windows.Forms.Label,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -2839,11 +2840,11 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Drawing.Size GetPreferredSize (System.Drawing.Size proposedSize) {return  base.GetPreferredSize(proposedSize);}
+		public   override Size GetPreferredSize (System.Drawing.Size proposedSize) {return  base.GetPreferredSize(proposedSize);}
 		#endregion
 	}
 	
-	public partial class ListBox : System.Windows.Forms.ListBox,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class ListBox : System.Windows.Forms.ListBox,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -3174,21 +3175,21 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Int32 FindString (System.String s) {return  base.FindString(s);}
+		public   new Int32 FindString (System.String s) {return  base.FindString(s);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Int32 FindStringExact (System.String s) {return  base.FindStringExact(s);}
+		public   new Int32 FindStringExact (System.String s) {return  base.FindStringExact(s);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Int32 GetItemHeight (System.Int32 index) {return  base.GetItemHeight(index);}
+		public   new Int32 GetItemHeight (System.Int32 index) {return  base.GetItemHeight(index);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Drawing.Rectangle GetItemRectangle (System.Int32 index) {return  base.GetItemRectangle(index);}
+		public   new Rectangle GetItemRectangle (System.Int32 index) {return  base.GetItemRectangle(index);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Boolean GetSelected (System.Int32 index) {return  base.GetSelected(index);}
+		public   new Boolean GetSelected (System.Int32 index) {return  base.GetSelected(index);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Int32 IndexFromPoint (System.Drawing.Point p) {return  base.IndexFromPoint(p);}
+		public   new Int32 IndexFromPoint (System.Drawing.Point p) {return  base.IndexFromPoint(p);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetBackColor () { base.ResetBackColor();}
+		public   override Void ResetBackColor () { base.ResetBackColor();}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Void ResetForeColor () { base.ResetForeColor();}
+		public   override Void ResetForeColor () { base.ResetForeColor();}
 		#endregion
 	}
 	
@@ -3254,7 +3255,7 @@ namespace Common.Forms
 	
 	public delegate void  PaintEventHandler (System.Object sender , Common.Forms.PaintEventArgs e );
 	
-	public partial class TextBox : System.Windows.Forms.TextBox,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class TextBox : System.Windows.Forms.TextBox,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -3561,11 +3562,11 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void Paste (System.String text) { base.Paste(text);}
+		public   new Void Paste (System.String text) { base.Paste(text);}
 		#endregion
 	}
 	
-	public partial class TrackBar : System.Windows.Forms.TrackBar,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISupportInitialize,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent
+	public partial class TrackBar : System.Windows.Forms.TrackBar,System.ComponentModel.ISupportInitialize,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -3842,11 +3843,11 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new System.Void SetRange (System.Int32 minValue , System.Int32 maxValue) { base.SetRange(minValue , maxValue);}
+		public   new Void SetRange (System.Int32 minValue , System.Int32 maxValue) { base.SetRange(minValue , maxValue);}
 		#endregion
 	}
 	
-	public partial class UserControl : System.Windows.Forms.UserControl,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.IDisposable,System.Windows.Forms.IDropTarget,System.Windows.Forms.IWin32Window,System.Windows.Forms.IContainerControl,System.ComponentModel.IComponent
+	public partial class UserControl : System.Windows.Forms.UserControl,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget
 	{
 		#region Constructors
 		#endregion
@@ -4138,7 +4139,7 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override System.Boolean ValidateChildren () {return  base.ValidateChildren();}
+		public   override Boolean ValidateChildren () {return  base.ValidateChildren();}
 		#endregion
 	}
 	
