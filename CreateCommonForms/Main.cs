@@ -35,7 +35,6 @@ namespace CreateCommonForms
 			
 			
 			var Windows = typeof(ButtonBase).Assembly;
-			var enums = Windows.GetTypes ().Where (x => x.IsEnum);
 			var wClasses = Windows.GetTypes ().Where (x => x.IsPublic && x.IsClass && !x.Name.Contains("Application")).ToList ();
 			
 			var MonoMac = typeof(MonoMac.Windows.Forms.EmptyObject).Assembly;
@@ -103,18 +102,6 @@ namespace CreateCommonForms
 			EndBlock();
 		}
 		
-		public static void WriteEnum(Type theEnum)
-		{
-			var line = "public enum " + theEnum.Name;
-			BeginBlock(line);
-			List<string> values = new List<string>();
-			foreach(var enumName in Enum.GetNames(theEnum))
-			{
-				var enumValue = enumName + " = " + (theEnum.Namespace.Contains("System.Windows.Forms") ? (theEnum.Namespace + ".") : "") + theEnum.Name + "." + enumName + "," ;
-				WriteLine(enumValue);
-			}
-			EndBlock();
-		}
 		
 		public static void WriteDelegate(Type type)
 		{		

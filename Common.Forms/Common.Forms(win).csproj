@@ -63,8 +63,6 @@
     <Compile Include="Common.Forms.g.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Enums.cs" />
-    <Compile Include="Forms.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
