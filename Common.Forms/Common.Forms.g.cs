@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Common.Forms
 {
-	public partial class Button : System.Windows.Forms.Button,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IButtonControl,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class Button : System.Windows.Forms.Button,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IButtonControl
 	{
 		#region Constructors
 		#endregion
@@ -292,7 +292,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class CheckBox : System.Windows.Forms.CheckBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class CheckBox : System.Windows.Forms.CheckBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -589,7 +589,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class CheckedListBox : System.Windows.Forms.CheckedListBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class CheckedListBox : System.Windows.Forms.CheckedListBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -940,7 +940,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class ComboBox : System.Windows.Forms.ComboBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class ComboBox : System.Windows.Forms.ComboBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -1286,7 +1286,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class Control : System.Windows.Forms.Control,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class Control : System.Windows.Forms.Control,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		public Control () : base ()
@@ -1791,7 +1791,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class DataGridViewButtonColumn : System.Windows.Forms.DataGridViewButtonColumn,System.IDisposable,System.ComponentModel.IComponent,System.ICloneable
+	public partial class DataGridViewButtonColumn : System.Windows.Forms.DataGridViewButtonColumn,System.IDisposable,System.ICloneable,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -1883,7 +1883,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCheckBoxCell,System.IDisposable,System.ICloneable,System.Windows.Forms.IDataGridViewEditingCell
+	public partial class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCheckBoxCell,System.Windows.Forms.IDataGridViewEditingCell,System.IDisposable,System.ICloneable
 	{
 		#region Constructors
 		public DataGridViewCheckBoxCell () : base ()
@@ -1997,7 +1997,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class DataGridViewCheckBoxColumn : System.Windows.Forms.DataGridViewCheckBoxColumn,System.IDisposable,System.ComponentModel.IComponent,System.ICloneable
+	public partial class DataGridViewCheckBoxColumn : System.Windows.Forms.DataGridViewCheckBoxColumn,System.IDisposable,System.ICloneable,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		public DataGridViewCheckBoxColumn () : base ()
@@ -2100,7 +2100,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class Form : System.Windows.Forms.Form,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.Windows.Forms.IContainerControl,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class Form : System.Windows.Forms.Form,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -2578,7 +2578,7 @@ namespace Common.Forms
 	
 	public delegate void  KeyPressEventHandler (System.Object sender , Common.Forms.KeyPressEventArgs e );
 	
-	public partial class Label : System.Windows.Forms.Label,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class Label : System.Windows.Forms.Label,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -2859,7 +2859,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class ListBox : System.Windows.Forms.ListBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class ListBox : System.Windows.Forms.ListBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -3273,7 +3273,7 @@ namespace Common.Forms
 	
 	public delegate void  PaintEventHandler (System.Object sender , Common.Forms.PaintEventArgs e );
 	
-	public partial class TextBox : System.Windows.Forms.TextBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class TextBox : System.Windows.Forms.TextBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -3588,7 +3588,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class TrackBar : System.Windows.Forms.TrackBar,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISupportInitialize,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class TrackBar : System.Windows.Forms.TrackBar,System.ComponentModel.ISupportInitialize,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
@@ -3869,7 +3869,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class UserControl : System.Windows.Forms.UserControl,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.Windows.Forms.IContainerControl,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
+	public partial class UserControl : System.Windows.Forms.UserControl,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent
 	{
 		#region Constructors
 		#endregion
