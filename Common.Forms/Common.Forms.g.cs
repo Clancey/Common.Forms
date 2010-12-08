@@ -1,8 +1,9 @@
 using System;
+using System.Windows.Forms;
 
 namespace Common.Forms
 {
-	public class Button : System.Windows.Forms.Button,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IButtonControl,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class Button : System.Windows.Forms.Button,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IButtonControl,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -11,37 +12,18 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Windows.Forms.DialogResult DialogResult {get;set;}
-		public new System.Boolean AutoSize {get;set;}
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Drawing.Image Image {get;set;}
-		public new System.String Text {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Enabled {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.Drawing.Font Font {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Int32 TabIndex {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new DialogResult DialogResult{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoSizeMode AutoSizeMode {get;set;}
+		public new AutoSizeMode AutoSizeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoEllipsis {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.FlatButtonAppearance FlatAppearance {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.ContentAlignment ImageAlign {get;set;}
+		public new ContentAlignment ImageAlign{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 ImageIndex {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -49,17 +31,15 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.ImageList ImageList {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.ContentAlignment TextAlign {get;set;}
+		public new ContentAlignment TextAlign{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.TextImageRelation TextImageRelation {get;set;}
+		public new TextImageRelation TextImageRelation{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean UseCompatibleTextRendering {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean UseMnemonic {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean UseVisualStyleBackColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AccessibleObject AccessibilityObject {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -69,11 +49,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -83,7 +63,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.BindingContext BindingContext {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -117,7 +97,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color ForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -155,7 +135,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -176,10 +156,10 @@ namespace Common.Forms
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler Click { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -307,10 +287,12 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void NotifyDefault (System.Boolean value) { base.NotifyDefault(value);}
 		#endregion
 	}
 	
-	public class CheckBox : System.Windows.Forms.CheckBox,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class CheckBox : System.Windows.Forms.CheckBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -319,45 +301,24 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Boolean Checked {get;set;}
-		public new System.Windows.Forms.CheckState CheckState {get;set;}
-		public new System.Boolean ThreeState {get;set;}
-		public new System.Boolean AutoSize {get;set;}
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Drawing.Image Image {get;set;}
-		public new System.String Text {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Enabled {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.Drawing.Font Font {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Int32 TabIndex {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new CheckState CheckState{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.Appearance Appearance {get;set;}
+		public new Appearance Appearance{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoCheck {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.ContentAlignment CheckAlign {get;set;}
+		public new ContentAlignment CheckAlign{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.ContentAlignment TextAlign {get;set;}
+		public new ContentAlignment TextAlign{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoEllipsis {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.FlatButtonAppearance FlatAppearance {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.ContentAlignment ImageAlign {get;set;}
+		public new ContentAlignment ImageAlign{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 ImageIndex {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -365,15 +326,13 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.ImageList ImageList {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.TextImageRelation TextImageRelation {get;set;}
+		public new TextImageRelation TextImageRelation{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean UseCompatibleTextRendering {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean UseMnemonic {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean UseVisualStyleBackColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AccessibleObject AccessibilityObject {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -383,11 +342,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -397,7 +356,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.BindingContext BindingContext {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -431,7 +390,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color ForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -469,7 +428,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -490,10 +449,10 @@ namespace Common.Forms
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler Click { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -630,7 +589,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public class CheckedListBox : System.Windows.Forms.CheckedListBox,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class CheckedListBox : System.Windows.Forms.CheckedListBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -639,24 +598,8 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Object DataSource {get;set;}
-		public new System.String DisplayMember {get;set;}
-		public new System.Windows.Forms.SelectionMode SelectionMode {get;set;}
-		public new System.String ValueMember {get;set;}
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Windows.Forms.BorderStyle BorderStyle {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new SelectionMode SelectionMode{get;set;}
+		public new BorderStyle BorderStyle{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.CheckedListBox.CheckedIndexCollection CheckedIndices {get;set;}
@@ -665,11 +608,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean CheckOnClick {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DrawMode DrawMode {get;set;}
+		public new DrawMode DrawMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 ItemHeight {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.CheckedListBox.ObjectCollection Items {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean ThreeDCheckBoxes {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -679,7 +620,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 ColumnWidth {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -699,17 +640,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 PreferredHeight {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean ScrollAlwaysVisible {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Int32 SelectedIndex {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.ListBox.SelectedIndexCollection SelectedIndices {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Object SelectedItem {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ListBox.SelectedObjectCollection SelectedItems {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Sorted {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -725,8 +660,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String FormatString {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean FormattingEnabled {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object SelectedValue {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AccessibleObject AccessibilityObject {get;set;}
@@ -737,11 +670,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -783,13 +716,13 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Enabled {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean InvokeRequired {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -823,8 +756,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Int32 TabIndex {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Top {get;set;}
@@ -841,10 +772,10 @@ namespace Common.Forms
 		#region Events
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -998,10 +929,18 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Boolean GetItemChecked (System.Int32 index) {return  base.GetItemChecked(index);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Windows.Forms.CheckState GetItemCheckState (System.Int32 index) {return  base.GetItemCheckState(index);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SetItemChecked (System.Int32 index , System.Boolean value) { base.SetItemChecked(index , value);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SetItemCheckState (System.Int32 index , System.Windows.Forms.CheckState value) { base.SetItemCheckState(index , value);}
 		#endregion
 	}
 	
-	public class ComboBox : System.Windows.Forms.ComboBox,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class ComboBox : System.Windows.Forms.ComboBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -1010,57 +949,32 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Object DataSource {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.Int32 ItemHeight {get;set;}
-		public new System.Int32 SelectedIndex {get;set;}
-		public new System.Object SelectedItem {get;set;}
-		public new System.String DisplayMember {get;set;}
-		public new System.Object SelectedValue {get;set;}
-		public new System.String ValueMember {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Enabled {get;set;}
-		public new System.Drawing.Font Font {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new ComboBoxStyle DropDownStyle{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AutoCompleteStringCollection AutoCompleteCustomSource {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoCompleteMode AutoCompleteMode {get;set;}
+		public new AutoCompleteMode AutoCompleteMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoCompleteSource AutoCompleteSource {get;set;}
+		public new AutoCompleteSource AutoCompleteSource{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DrawMode DrawMode {get;set;}
+		public new DrawMode DrawMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 DropDownHeight {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ComboBoxStyle DropDownStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 DropDownWidth {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean DroppedDown {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color ForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean IntegralHeight {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ComboBox.ObjectCollection Items {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 MaxDropDownItems {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1082,13 +996,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Sorted {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.String Text {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.IFormatProvider FormatInfo {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String FormatString {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean FormattingEnabled {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AccessibleObject AccessibilityObject {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1098,11 +1008,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1140,11 +1050,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean InvokeRequired {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1176,11 +1086,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Int32 TabIndex {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1198,11 +1106,11 @@ namespace Common.Forms
 		#region Events
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.KeyPressEventHandler KeyPress { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.KeyPressEventHandler KeyPress { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		public new System.EventHandler TextChanged { get;set;}
 		#region Excluded
@@ -1361,10 +1269,24 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void BeginUpdate () { base.BeginUpdate();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void EndUpdate () { base.EndUpdate();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Int32 FindString (System.String s) {return  base.FindString(s);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Int32 FindStringExact (System.String s) {return  base.FindStringExact(s);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Int32 GetItemHeight (System.Int32 index) {return  base.GetItemHeight(index);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetText () { base.ResetText();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SelectAll () { base.SelectAll();}
 		#endregion
 	}
 	
-	public class Control : System.Windows.Forms.Control,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class Control : System.Windows.Forms.Control,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		public Control () : base ()
@@ -1397,13 +1319,6 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color DefaultBackColor {get;set;}
@@ -1412,9 +1327,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color DefaultForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.Keys ModifierKeys {get;set;}
+		public new Keys ModifierKeys{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.MouseButtons MouseButtons {get;set;}
+		public new MouseButtons MouseButtons{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point MousePosition {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1428,11 +1343,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1444,7 +1359,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.BindingContext BindingContext {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1482,7 +1397,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Enabled {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1496,7 +1411,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Height {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean InvokeRequired {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1532,7 +1447,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1698,10 +1613,96 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void DrawToBitmap (System.Drawing.Bitmap bitmap , System.Drawing.Rectangle targetBounds) { base.DrawToBitmap(bitmap , targetBounds);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public static  new System.Windows.Forms.Control FromChildHandle (System.IntPtr handle) {return System.Windows.Forms.Control.FromChildHandle(handle);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public static  new System.Windows.Forms.Control FromHandle (System.IntPtr handle) {return System.Windows.Forms.Control.FromHandle(handle);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public static  new System.Boolean IsKeyLocked (System.Windows.Forms.Keys keyVal) {return System.Windows.Forms.Control.IsKeyLocked(keyVal);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public static  new System.Boolean IsMnemonic (System.Char charCode , System.String text) {return System.Windows.Forms.Control.IsMnemonic(charCode , text);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.IAsyncResult BeginInvoke (System.Delegate method) {return  base.BeginInvoke(method);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void BringToFront () { base.BringToFront();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Boolean Contains (System.Windows.Forms.Control ctl) {return  base.Contains(ctl);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void CreateControl () { base.CreateControl();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Drawing.Graphics CreateGraphics () {return  base.CreateGraphics();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Windows.Forms.DragDropEffects DoDragDrop (System.Object data , System.Windows.Forms.DragDropEffects allowedEffects) {return  base.DoDragDrop(data , allowedEffects);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Windows.Forms.Form FindForm () {return  base.FindForm();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Boolean Focus () {return  base.Focus();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Windows.Forms.Control GetChildAtPoint (System.Drawing.Point pt) {return  base.GetChildAtPoint(pt);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Windows.Forms.IContainerControl GetContainerControl () {return  base.GetContainerControl();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Windows.Forms.Control GetNextControl (System.Windows.Forms.Control ctl , System.Boolean forward) {return  base.GetNextControl(ctl , forward);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Drawing.Size GetPreferredSize (System.Drawing.Size proposedSize) {return  base.GetPreferredSize(proposedSize);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Hide () { base.Hide();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Invalidate () { base.Invalidate();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Object Invoke (System.Delegate method) {return  base.Invoke(method);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void PerformLayout () { base.PerformLayout();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Drawing.Point PointToClient (System.Drawing.Point p) {return  base.PointToClient(p);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Drawing.Point PointToScreen (System.Drawing.Point p) {return  base.PointToScreen(p);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Drawing.Rectangle RectangleToClient (System.Drawing.Rectangle r) {return  base.RectangleToClient(r);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Drawing.Rectangle RectangleToScreen (System.Drawing.Rectangle r) {return  base.RectangleToScreen(r);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void Refresh () { base.Refresh();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetBackColor () { base.ResetBackColor();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void ResetBindings () { base.ResetBindings();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetCursor () { base.ResetCursor();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetFont () { base.ResetFont();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetForeColor () { base.ResetForeColor();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void ResetImeMode () { base.ResetImeMode();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetRightToLeft () { base.ResetRightToLeft();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetText () { base.ResetText();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void ResumeLayout () { base.ResumeLayout();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Scale (System.Single ratio) { base.Scale(ratio);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Select () { base.Select();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Boolean SelectNextControl (System.Windows.Forms.Control ctl , System.Boolean forward , System.Boolean tabStopOnly , System.Boolean nested , System.Boolean wrap) {return  base.SelectNextControl(ctl , forward , tabStopOnly , nested , wrap);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SendToBack () { base.SendToBack();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SetBounds (System.Int32 x , System.Int32 y , System.Int32 width , System.Int32 height) { base.SetBounds(x , y , width , height);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Show () { base.Show();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SuspendLayout () { base.SuspendLayout();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Update () { base.Update();}
 		#endregion
 	}
 	
-	public class DataGridViewButtonCell : System.Windows.Forms.DataGridViewButtonCell,System.IDisposable,System.ICloneable
+	public partial class DataGridViewButtonCell : System.Windows.Forms.DataGridViewButtonCell,System.IDisposable,System.ICloneable
 	{
 		#region Constructors
 		#endregion
@@ -1710,13 +1711,12 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Object Tag {get;set;}
-		public new System.Windows.Forms.DataGridViewElementStates State {get;set;}
+		public new DataGridViewElementStates State{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Type EditType {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Type FormattedValueType {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1748,7 +1748,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewElementStates InheritedState {get;set;}
+		public new DataGridViewElementStates InheritedState{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridViewCellStyle InheritedStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1786,10 +1786,12 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Object Clone () {return  base.Clone();}
 		#endregion
 	}
 	
-	public class DataGridViewButtonColumn : System.Windows.Forms.DataGridViewButtonColumn,System.IDisposable,System.ICloneable,System.ComponentModel.IComponent
+	public partial class DataGridViewButtonColumn : System.Windows.Forms.DataGridViewButtonColumn,System.IDisposable,System.ComponentModel.IComponent,System.ICloneable
 	{
 		#region Constructors
 		#endregion
@@ -1798,21 +1800,19 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Windows.Forms.DataGridViewColumnHeaderCell HeaderCell {get;set;}
-		public new System.Int32 Width {get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridViewCell CellTemplate {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridViewCellStyle DefaultCellStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String Text {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean UseColumnTextForButtonValue {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewAutoSizeColumnMode AutoSizeMode {get;set;}
+		public new DataGridViewAutoSizeColumnMode AutoSizeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Type CellType {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1830,7 +1830,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String HeaderText {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewAutoSizeColumnMode InheritedAutoSizeMode {get;set;}
+		public new DataGridViewAutoSizeColumnMode InheritedAutoSizeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridViewCellStyle InheritedStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1842,11 +1842,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean ReadOnly {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewTriState Resizable {get;set;}
+		public new DataGridViewTriState Resizable{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewColumnSortMode SortMode {get;set;}
+		public new DataGridViewColumnSortMode SortMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String ToolTipText {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1868,7 +1868,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridView DataGridView {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewElementStates State {get;set;}
+		public new DataGridViewElementStates State{get;set;}
 		#endregion
 		#endregion
 		#region Events
@@ -1878,10 +1878,12 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Object Clone () {return  base.Clone();}
 		#endregion
 	}
 	
-	public class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCheckBoxCell,System.IDisposable,System.ICloneable,System.Windows.Forms.IDataGridViewEditingCell
+	public partial class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCheckBoxCell,System.IDisposable,System.ICloneable,System.Windows.Forms.IDataGridViewEditingCell
 	{
 		#region Constructors
 		public DataGridViewCheckBoxCell () : base ()
@@ -1899,8 +1901,7 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Object Tag {get;set;}
-		public new System.Windows.Forms.DataGridViewElementStates State {get;set;}
+		public new DataGridViewElementStates State{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object EditingCellFormattedValue {get;set;}
@@ -1911,7 +1912,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object FalseValue {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Type FormattedValueType {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1947,7 +1948,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewElementStates InheritedState {get;set;}
+		public new DataGridViewElementStates InheritedState{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridViewCellStyle InheritedStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1985,10 +1986,18 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Object Clone () {return  base.Clone();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Object GetEditingCellFormattedValue (System.Windows.Forms.DataGridViewDataErrorContexts context) {return  base.GetEditingCellFormattedValue(context);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Object ParseFormattedValue (System.Object formattedValue , System.Windows.Forms.DataGridViewCellStyle cellStyle , System.ComponentModel.TypeConverter formattedValueTypeConverter , System.ComponentModel.TypeConverter valueTypeConverter) {return  base.ParseFormattedValue(formattedValue , cellStyle , formattedValueTypeConverter , valueTypeConverter);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void PrepareEditingCellForEdit (System.Boolean selectAll) { base.PrepareEditingCellForEdit(selectAll);}
 		#endregion
 	}
 	
-	public class DataGridViewCheckBoxColumn : System.Windows.Forms.DataGridViewCheckBoxColumn,System.IDisposable,System.ICloneable,System.ComponentModel.IComponent
+	public partial class DataGridViewCheckBoxColumn : System.Windows.Forms.DataGridViewCheckBoxColumn,System.IDisposable,System.ComponentModel.IComponent,System.ICloneable
 	{
 		#region Constructors
 		public DataGridViewCheckBoxColumn () : base ()
@@ -2006,8 +2015,6 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Windows.Forms.DataGridViewColumnHeaderCell HeaderCell {get;set;}
-		public new System.Int32 Width {get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridViewCell CellTemplate {get;set;}
@@ -2016,7 +2023,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object FalseValue {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object IndeterminateValue {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2024,7 +2031,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object TrueValue {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewAutoSizeColumnMode AutoSizeMode {get;set;}
+		public new DataGridViewAutoSizeColumnMode AutoSizeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Type CellType {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2042,7 +2049,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String HeaderText {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewAutoSizeColumnMode InheritedAutoSizeMode {get;set;}
+		public new DataGridViewAutoSizeColumnMode InheritedAutoSizeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridViewCellStyle InheritedStyle {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2054,11 +2061,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean ReadOnly {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewTriState Resizable {get;set;}
+		public new DataGridViewTriState Resizable{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewColumnSortMode SortMode {get;set;}
+		public new DataGridViewColumnSortMode SortMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String ToolTipText {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2080,7 +2087,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.DataGridView DataGridView {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DataGridViewElementStates State {get;set;}
+		public new DataGridViewElementStates State{get;set;}
 		#endregion
 		#endregion
 		#region Events
@@ -2093,7 +2100,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public class Form : System.Windows.Forms.Form,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class Form : System.Windows.Forms.Form,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.Windows.Forms.IContainerControl,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -2102,25 +2109,11 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean MaximizeBox {get;set;}
-		public new System.Windows.Forms.MainMenu Menu {get;set;}
-		public new System.Boolean MinimizeBox {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.String Text {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Windows.Forms.Control.ControlCollection Controls {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new DialogResult DialogResult{get;set;}
+		public new AutoScaleMode AutoScaleMode{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Form ActiveForm {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.IButtonControl AcceptButton {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowTransparency {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2132,11 +2125,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoSize {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoSizeMode AutoSizeMode {get;set;}
+		public new AutoSizeMode AutoSizeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoValidate AutoValidate {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.IButtonControl CancelButton {get;set;}
+		public new AutoValidate AutoValidate{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean ControlBox {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2144,13 +2135,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point DesktopLocation {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DialogResult DialogResult {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FormBorderStyle FormBorderStyle {get;set;}
+		public new FormBorderStyle FormBorderStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HelpButton {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.Icon Icon {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean IsMdiChild {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2176,8 +2163,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Size MinimumSize {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean Modal {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Double Opacity {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Form[] OwnedForms {get;set;}
@@ -2192,9 +2177,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean ShowInTaskbar {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.SizeGripStyle SizeGripStyle {get;set;}
+		public new SizeGripStyle SizeGripStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FormStartPosition StartPosition {get;set;}
+		public new FormStartPosition StartPosition{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 TabIndex {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2206,13 +2191,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color TransparencyKey {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FormWindowState WindowState {get;set;}
+		public new FormWindowState WindowState{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Control ActiveControl {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.SizeF AutoScaleDimensions {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoScaleMode AutoScaleMode {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.BindingContext BindingContext {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2242,17 +2223,17 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Bottom {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2282,7 +2263,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Enabled {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2294,7 +2275,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean InvokeRequired {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2326,7 +2307,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2338,8 +2319,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean UseWaitCursor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean Visible {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.IWindowTarget WindowTarget {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.IContainer Container {get;set;}
@@ -2349,10 +2328,10 @@ namespace Common.Forms
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler AutoValidateChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2524,10 +2503,26 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public static  new System.Drawing.SizeF GetAutoScaleSize (System.Drawing.Font font) {return System.Windows.Forms.Form.GetAutoScaleSize(font);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Activate () { base.Activate();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void AddOwnedForm (System.Windows.Forms.Form ownedForm) { base.AddOwnedForm(ownedForm);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void LayoutMdi (System.Windows.Forms.MdiLayout value) { base.LayoutMdi(value);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void RemoveOwnedForm (System.Windows.Forms.Form ownedForm) { base.RemoveOwnedForm(ownedForm);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SetDesktopBounds (System.Int32 x , System.Int32 y , System.Int32 width , System.Int32 height) { base.SetDesktopBounds(x , y , width , height);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SetDesktopLocation (System.Int32 x , System.Int32 y) { base.SetDesktopLocation(x , y);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Boolean ValidateChildren () {return  base.ValidateChildren();}
 		#endregion
 	}
 	
-	public class KeyEventArgs : System.Windows.Forms.KeyEventArgs
+	public partial class KeyEventArgs : System.Windows.Forms.KeyEventArgs
 	{
 		#region Constructors
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2541,15 +2536,9 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Boolean Alt {get;set;}
-		public new System.Boolean Control {get;set;}
-		public new System.Boolean Handled {get;set;}
-		public new System.Windows.Forms.Keys KeyCode {get;set;}
-		public new System.Windows.Forms.Keys KeyData {get;set;}
-		public new System.Int32 KeyValue {get;set;}
-		public new System.Windows.Forms.Keys Modifiers {get;set;}
-		public new System.Boolean Shift {get;set;}
-		public new System.Boolean SuppressKeyPress {get;set;}
+		public new Keys KeyCode{get;set;}
+		public new Keys KeyData{get;set;}
+		public new Keys Modifiers{get;set;}
 		#region Excluded
 		#endregion
 		#endregion
@@ -2561,9 +2550,9 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public delegate void  KeyEventHandler (System.Object sender , System.Windows.Forms.KeyEventArgs e );
+	public delegate void  KeyEventHandler (System.Object sender , Common.Forms.KeyEventArgs e );
 	
-	public class KeyPressEventArgs : System.Windows.Forms.KeyPressEventArgs
+	public partial class KeyPressEventArgs : System.Windows.Forms.KeyPressEventArgs
 	{
 		#region Constructors
 		public KeyPressEventArgs (System.Char keyChar) : base (keyChar)
@@ -2576,8 +2565,6 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Boolean Handled {get;set;}
-		public new System.Char KeyChar {get;set;}
 		#region Excluded
 		#endregion
 		#endregion
@@ -2589,9 +2576,9 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public delegate void  KeyPressEventHandler (System.Object sender , System.Windows.Forms.KeyPressEventArgs e );
+	public delegate void  KeyPressEventHandler (System.Object sender , Common.Forms.KeyPressEventArgs e );
 	
-	public class Label : System.Windows.Forms.Label,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class Label : System.Windows.Forms.Label,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -2600,44 +2587,23 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Boolean AutoSize {get;set;}
-		public new System.Windows.Forms.BorderStyle BorderStyle {get;set;}
-		public new System.Drawing.ContentAlignment TextAlign {get;set;}
-		public new System.String Text {get;set;}
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Enabled {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.Drawing.Font Font {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Int32 Left {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Int32 Right {get;set;}
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Int32 TabIndex {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Int32 Top {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new BorderStyle BorderStyle{get;set;}
+		public new ContentAlignment TextAlign{get;set;}
+		public new AnchorStyles Anchor{get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoEllipsis {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.FlatStyle FlatStyle {get;set;}
+		public new FlatStyle FlatStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image Image {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Drawing.ContentAlignment ImageAlign {get;set;}
+		public new ContentAlignment ImageAlign{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 ImageIndex {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2645,7 +2611,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.ImageList ImageList {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 PreferredHeight {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2665,7 +2631,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2707,7 +2673,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color ForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2755,11 +2721,11 @@ namespace Common.Forms
 		#region Events
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.KeyPressEventHandler KeyPress { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.KeyPressEventHandler KeyPress { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		public new System.EventHandler TextChanged { get;set;}
 		#region Excluded
@@ -2888,10 +2854,12 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Drawing.Size GetPreferredSize (System.Drawing.Size proposedSize) {return  base.GetPreferredSize(proposedSize);}
 		#endregion
 	}
 	
-	public class ListBox : System.Windows.Forms.ListBox,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class ListBox : System.Windows.Forms.ListBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -2904,35 +2872,19 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Windows.Forms.BorderStyle BorderStyle {get;set;}
-		public new System.Windows.Forms.SelectionMode SelectionMode {get;set;}
-		public new System.Object DataSource {get;set;}
-		public new System.String DisplayMember {get;set;}
-		public new System.String ValueMember {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new BorderStyle BorderStyle{get;set;}
+		public new SelectionMode SelectionMode{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 ColumnWidth {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.ListBox.IntegerCollection CustomTabOffsets {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DrawMode DrawMode {get;set;}
+		public new DrawMode DrawMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Font Font {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2946,25 +2898,17 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 ItemHeight {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ListBox.ObjectCollection Items {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean MultiColumn {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Padding Padding {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 PreferredHeight {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean ScrollAlwaysVisible {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Int32 SelectedIndex {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.ListBox.SelectedIndexCollection SelectedIndices {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Object SelectedItem {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ListBox.SelectedObjectCollection SelectedItems {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Sorted {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2980,8 +2924,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String FormatString {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean FormattingEnabled {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object SelectedValue {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AccessibleObject AccessibilityObject {get;set;}
@@ -2992,11 +2934,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3038,13 +2980,13 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Enabled {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean InvokeRequired {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3078,8 +3020,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Int32 TabIndex {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Top {get;set;}
@@ -3096,10 +3036,10 @@ namespace Common.Forms
 		#region Events
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3251,6 +3191,22 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Int32 FindString (System.String s) {return  base.FindString(s);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Int32 FindStringExact (System.String s) {return  base.FindStringExact(s);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Int32 GetItemHeight (System.Int32 index) {return  base.GetItemHeight(index);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Drawing.Rectangle GetItemRectangle (System.Int32 index) {return  base.GetItemRectangle(index);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Boolean GetSelected (System.Int32 index) {return  base.GetSelected(index);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Int32 IndexFromPoint (System.Drawing.Point p) {return  base.IndexFromPoint(p);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetBackColor () { base.ResetBackColor();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Void ResetForeColor () { base.ResetForeColor();}
 		#endregion
 	}
 	
@@ -3264,7 +3220,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public class MouseEventArgs : System.Windows.Forms.MouseEventArgs
+	public partial class MouseEventArgs : System.Windows.Forms.MouseEventArgs
 	{
 		#region Constructors
 		public MouseEventArgs (System.Windows.Forms.MouseButtons button , System.Int32 clicks , System.Int32 x , System.Int32 y , System.Int32 delta) : base (button , clicks , x , y , delta)
@@ -3277,12 +3233,7 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Windows.Forms.MouseButtons Button {get;set;}
-		public new System.Int32 Clicks {get;set;}
-		public new System.Int32 Delta {get;set;}
-		public new System.Int32 X {get;set;}
-		public new System.Int32 Y {get;set;}
-		public new System.Drawing.Point Location {get;set;}
+		public new MouseButtons Button{get;set;}
 		#region Excluded
 		#endregion
 		#endregion
@@ -3294,9 +3245,9 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public delegate void  MouseEventHandler (System.Object sender , System.Windows.Forms.MouseEventArgs e );
+	public delegate void  MouseEventHandler (System.Object sender , Common.Forms.MouseEventArgs e );
 	
-	public class PaintEventArgs : System.Windows.Forms.PaintEventArgs,System.IDisposable
+	public partial class PaintEventArgs : System.Windows.Forms.PaintEventArgs,System.IDisposable
 	{
 		#region Constructors
 		public PaintEventArgs (System.Drawing.Graphics graphics , System.Drawing.Rectangle clipRect) : base (graphics , clipRect)
@@ -3309,8 +3260,6 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Drawing.Rectangle ClipRectangle {get;set;}
-		public new System.Drawing.Graphics Graphics {get;set;}
 		#region Excluded
 		#endregion
 		#endregion
@@ -3322,9 +3271,9 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public delegate void  PaintEventHandler (System.Object sender , System.Windows.Forms.PaintEventArgs e );
+	public delegate void  PaintEventHandler (System.Object sender , Common.Forms.PaintEventArgs e );
 	
-	public class TextBox : System.Windows.Forms.TextBox,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class TextBox : System.Windows.Forms.TextBox,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -3333,49 +3282,27 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.String Text {get;set;}
-		public new System.Windows.Forms.HorizontalAlignment TextAlign {get;set;}
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Windows.Forms.BorderStyle BorderStyle {get;set;}
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Enabled {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.Drawing.Font Font {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Int32 Left {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Int32 Right {get;set;}
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Int32 TabIndex {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Int32 Top {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new HorizontalAlignment TextAlign{get;set;}
+		public new BorderStyle BorderStyle{get;set;}
+		public new AnchorStyles Anchor{get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AutoCompleteStringCollection AutoCompleteCustomSource {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoCompleteMode AutoCompleteMode {get;set;}
+		public new AutoCompleteMode AutoCompleteMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoCompleteSource AutoCompleteSource {get;set;}
+		public new AutoCompleteSource AutoCompleteSource{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean UseSystemPasswordChar {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AcceptsReturn {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.CharacterCasing CharacterCasing {get;set;}
+		public new CharacterCasing CharacterCasing{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Char PasswordChar {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ScrollBars ScrollBars {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean Multiline {get;set;}
+		public new ScrollBars ScrollBars{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AcceptsTab {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3388,8 +3315,6 @@ namespace Common.Forms
 		public new System.Drawing.Color ForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HideSelection {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.String[] Lines {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 MaxLength {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3411,7 +3336,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean WordWrap {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Padding Padding {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3423,7 +3348,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3465,11 +3390,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean InvokeRequired {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3513,11 +3438,11 @@ namespace Common.Forms
 		#region Events
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.KeyPressEventHandler KeyPress { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.KeyPressEventHandler KeyPress { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		public new System.EventHandler TextChanged { get;set;}
 		#region Excluded
@@ -3658,10 +3583,12 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void Paste (System.String text) { base.Paste(text);}
 		#endregion
 	}
 	
-	public class TrackBar : System.Windows.Forms.TrackBar,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISupportInitialize,System.ComponentModel.ISynchronizeInvoke
+	public partial class TrackBar : System.Windows.Forms.TrackBar,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.ComponentModel.ISupportInitialize,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -3670,40 +3597,19 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.Drawing.Font Font {get;set;}
-		public new System.Int32 LargeChange {get;set;}
-		public new System.Int32 Maximum {get;set;}
-		public new System.Int32 Minimum {get;set;}
-		public new System.Int32 SmallChange {get;set;}
-		public new System.Int32 TickFrequency {get;set;}
-		public new System.Int32 Value {get;set;}
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Boolean Enabled {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoSize {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color ForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.Orientation Orientation {get;set;}
+		public new Orientation Orientation{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Padding Padding {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3711,7 +3617,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String Text {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.TickStyle TickStyle {get;set;}
+		public new TickStyle TickStyle{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.AccessibleObject AccessibilityObject {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3721,11 +3627,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3765,7 +3671,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3799,11 +3705,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Int32 TabIndex {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3821,10 +3725,10 @@ namespace Common.Forms
 		#region Events
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3960,10 +3864,12 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new System.Void SetRange (System.Int32 minValue , System.Int32 maxValue) { base.SetRange(minValue , maxValue);}
 		#endregion
 	}
 	
-	public class UserControl : System.Windows.Forms.UserControl,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget,System.IDisposable,System.Windows.Forms.IWin32Window,System.ComponentModel.IComponent,System.ComponentModel.ISynchronizeInvoke
+	public partial class UserControl : System.Windows.Forms.UserControl,System.IDisposable,System.Windows.Forms.IDropTarget,System.ComponentModel.IComponent,System.Windows.Forms.IWin32Window,System.Windows.Forms.IContainerControl,System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.IBindableComponent
 	{
 		#region Constructors
 		#endregion
@@ -3972,37 +3878,19 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Properties
-		public new System.String Text {get;set;}
-		public new System.Windows.Forms.BorderStyle BorderStyle {get;set;}
-		public new System.Drawing.Color BackColor {get;set;}
-		public new System.Drawing.Rectangle Bounds {get;set;}
-		public new System.Drawing.Rectangle ClientRectangle {get;set;}
-		public new System.Drawing.Size ClientSize {get;set;}
-		public new System.Windows.Forms.Control.ControlCollection Controls {get;set;}
-		public new System.Boolean Enabled {get;set;}
-		public new System.Boolean Focused {get;set;}
-		public new System.Drawing.Font Font {get;set;}
-		public new System.IntPtr Handle {get;set;}
-		public new System.Int32 Height {get;set;}
-		public new System.Drawing.Point Location {get;set;}
-		public new System.String Name {get;set;}
-		public new System.Drawing.Size Size {get;set;}
-		public new System.Object Tag {get;set;}
-		public new System.Boolean Visible {get;set;}
-		public new System.Int32 Width {get;set;}
+		public new BorderStyle BorderStyle{get;set;}
+		public new AutoScaleMode AutoScaleMode{get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoSize {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoSizeMode AutoSizeMode {get;set;}
+		public new AutoSizeMode AutoSizeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoValidate AutoValidate {get;set;}
+		public new AutoValidate AutoValidate{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Control ActiveControl {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.SizeF AutoScaleDimensions {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AutoScaleMode AutoScaleMode {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.BindingContext BindingContext {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4034,11 +3922,11 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String AccessibleName {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AccessibleRole AccessibleRole {get;set;}
+		public new AccessibleRole AccessibleRole{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.AnchorStyles Anchor {get;set;}
+		public new AnchorStyles Anchor{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4048,7 +3936,7 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Image BackgroundImage {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImageLayout BackgroundImageLayout {get;set;}
+		public new ImageLayout BackgroundImageLayout{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Bottom {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4076,13 +3964,13 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DockStyle Dock {get;set;}
+		public new DockStyle Dock{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color ForeColor {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.ImeMode ImeMode {get;set;}
+		public new ImeMode ImeMode{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean InvokeRequired {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4116,11 +4004,9 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.RightToLeft RightToLeft {get;set;}
+		public new RightToLeft RightToLeft{get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.ComponentModel.ISite Site {get;set;}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Int32 TabIndex {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get;set;}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4139,10 +4025,10 @@ namespace Common.Forms
 		public new System.EventHandler AutoSizeChanged { get;set;}
 		public new System.EventHandler AutoValidateChanged { get;set;}
 		public new System.EventHandler GotFocus { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDoubleClick { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseDown { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseMove { get;set;}
-		public new System.Windows.Forms.MouseEventHandler MouseUp { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDoubleClick { get;set;}
+		public new Common.Forms.MouseEventHandler MouseDown { get;set;}
+		public new Common.Forms.MouseEventHandler MouseMove { get;set;}
+		public new Common.Forms.MouseEventHandler MouseUp { get;set;}
 		public new System.EventHandler SizeChanged { get;set;}
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4276,6 +4162,8 @@ namespace Common.Forms
 		#endregion
 		#endregion
 		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override System.Boolean ValidateChildren () {return  base.ValidateChildren();}
 		#endregion
 	}
 	
@@ -4368,6 +4256,8 @@ namespace Common.Forms
 	{
 	}
 	
+	#endregion
+	#region Enums
 	#endregion
 }
 

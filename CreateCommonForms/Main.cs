@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Windows.Forms;
 using System.Text;
+using System.Collections.Generic;
 namespace CreateCommonForms
 {
 	class MainClass
@@ -13,6 +14,7 @@ namespace CreateCommonForms
 		
     	public static int Indent = 0;
 		static string filePath = @"../../Common.Forms/Common.Forms.g.cs";
+		public static List<Type> Enums = new List<Type>();
 		public static void Main (string[] args)
 		{
 			//var winPath = args[0]; 
@@ -22,6 +24,7 @@ namespace CreateCommonForms
 				File.Delete(filePath);
 			m_writer = new StreamWriter(filePath);// File.Create (filePath);
 			WriteLine ("using System;");
+			WriteLine ("using System.Windows.Forms;");
 			//WriteLine ("using System.Windows.Forms;");
 			WriteLine ("");
 			BeginBlock ("namespace Common.Forms");
@@ -46,6 +49,16 @@ namespace CreateCommonForms
 				WriteInterface (theClass);
 				Console.WriteLine (theClass.FullName);
 			}
+			
+			EndRegion();
+			
+			BeginRegion("Enums");
+			foreach(var theEnum in Enums)
+			{
+			//	WriteEnum(theEnum);
+			}
+			
+			
 			EndRegion();
 			
 			EndBlock();
@@ -55,6 +68,9 @@ namespace CreateCommonForms
 		public static void WriteClass (Type includeType, Type exludeType)
 		{
 			var interfaces = includeType.GetInterfaces().Where(x=> x.IsPublic);
+			
+			if(includeType.Name == "Form")
+				Console.WriteLine("Form");
 			
 			//if delegate
 			if(typeof(Delegate).IsAssignableFrom(includeType))
@@ -67,7 +83,7 @@ namespace CreateCommonForms
 				if(includeType.IsSealed)
 					WriteSealedClass(includeType,exludeType);
 				else	
-					BeginBlock("public class " + includeType.Name + " : " + includeType.Namespace + "." + includeType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> (x.Namespace + "." + x.Name)).ToArray())): ""));
+					BeginBlock("public partial class " + includeType.Name + " : " + includeType.Namespace + "." + includeType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> (x.Namespace + "." + x.Name)).ToArray())): ""));
 				WriteConstructors(includeType,exludeType);
 				WriteClassFields(includeType,exludeType);
 				WriteClassProperties(includeType,exludeType);
@@ -83,11 +99,23 @@ namespace CreateCommonForms
 			EndBlock();
 		}
 		
+		public static void WriteEnum(Type theEnum)
+		{
+			var line = "public enum " + theEnum.Name;
+			BeginBlock(line);
+			List<string> values = new List<string>();
+			foreach(var enumName in Enum.GetNames(theEnum))
+			{
+				var enumValue = enumName + " = " + theEnum.Namespace + "." + theEnum.Name + "." + enumName + "," ;
+				WriteLine(enumValue);
+			}
+			EndBlock();
+		}
+		
 		public static void WriteDelegate(Type type)
 		{		
-			var test = type.GetMembers().Where(x => x.Name == "IHTMLWindow2").FirstOrDefault();
 			var members = type.GetMember("Invoke");
-			var invoke = members.FirstOrDefault().ToString();
+			var invoke = members.FirstOrDefault().ToString().Replace("System.Windows.Forms","Common.Forms");
 			var newString = "public delegate ";
 			var invokeIndex = invoke.IndexOf("Invoke");
 			newString += invoke.Substring(0,invokeIndex).ToLower();
@@ -97,9 +125,6 @@ namespace CreateCommonForms
 			newString += endingString.Insert(endingString.IndexOf(")")," e ") + ";";
 			WriteLine(newString);
 			WriteLine("");
-			
-		
-			
 		}
 		
 		public static void WriteNonInherit(Type includeType, Type excludeType)
@@ -184,15 +209,15 @@ namespace CreateCommonForms
 			var eEvents = excludeType.GetEvents();
 			var eventsInclude = iEvents.Select(x=> x.Name).Intersect(eEvents.Select(y=> y.Name)).Distinct().ToList();
 			var eventsExclude = iEvents.Select(x=> x.Name).Except(eventsInclude).Distinct().ToList();
-			
-			/*
+
 			foreach(var eventName in eventsInclude.OrderBy(x=> x))
 			{
-				var theEvent = wEvents.Where(x=> x.Name == eventName).First();
-				string line = "public new " + theEvent.EventHandlerType + " " + theEvent.Name + " { get;set;}";
+				var theEvent = iEvents.Where(x=> x.Name == eventName).First();
+				string line = "public new " + theEvent.EventHandlerType.ToString().Replace("System.Windows.Forms.","Common.Forms.") + " " + theEvent.Name + " { get;set;}";
 				WriteLine(line);
 			}
-			*/
+			
+			
 			
 			BeginRegion("Excluded");
 			foreach(var eventName in eventsExclude.OrderBy(x=> x))
@@ -214,23 +239,46 @@ namespace CreateCommonForms
 			var propsInclude = iProps.Select(x=> x.Name).Intersect(eProps.Select(y=> y.Name)).Distinct().ToList();
 			var propsExclude = iProps.Select(x=> x.Name).Except(propsInclude).Distinct().ToList();
 			
-			/*
+			
 			//Included
 			foreach(var propName in propsInclude)
 			{
-				var prop = wProps.Where(x=> x.Name == propName).First();
-				writeClassProperty(prop,true);
+				var prop = iProps.Where(x=> x.Name == propName).First();
+				if(prop.PropertyType.IsEnum)
+				{
+					if(!Enums.Contains(prop.PropertyType))
+						Enums.Add(prop.PropertyType);
+					writeEnumProperty(prop,true);
+				}
+				//writeClassProperty(prop,true);
 			}
-			*/
+			
 			
 			BeginRegion("Excluded");
 			foreach(var propName in propsExclude)
 			{
 				var prop = iProps.Where(x=> x.Name == propName).First();
-				writeClassProperty(prop,false);
+				if(prop.PropertyType.IsEnum)
+				{
+					if(!Enums.Contains(prop.PropertyType))
+						Enums.Add(prop.PropertyType);
+					writeEnumProperty(prop,false);
+				}
+				else
+					writeClassProperty(prop,false);
+				
 			}
 			EndRegion();
 			EndRegion();		
+		}
+		private static void writeEnumProperty(PropertyInfo prop,bool include)
+		{
+			if(include)
+			{
+				WriteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get;set;}"); 
+			}
+			else
+				WriteObsoleteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get;set;}"); 
 		}
 		private static void writeClassProperty(PropertyInfo prop,bool included)
 		{
@@ -278,35 +326,59 @@ namespace CreateCommonForms
 		
 		public static void WriteClassMethods(Type includeType, Type excludeType)
 		{
-			BeginRegion("Excluded Methods");
-			var iMethods = includeType.GetMethods().Where(x=> !x.IsHideBySig).ToList();
+			var iMethods = includeType.GetMethods(BindingFlags.Public|BindingFlags.Instance|BindingFlags.DeclaredOnly|BindingFlags.Static).Where(x=> !x.IsSpecialName ).ToList();//.Where(x=> !x.IsHideBySig).ToList();
 			var eMethods = excludeType.GetMethods();			
 			var methodsInclude = iMethods.Select(x=> x.Name).Intersect(eMethods.Select(y=> y.Name)).Distinct().ToList();
 			var methodsExclude = iMethods.Select(x=> x.Name).Except(methodsInclude).Distinct().ToList();
-			
-			foreach(var methodName in methodsExclude)
+			foreach(var methodName in methodsInclude)
 			{
 				var method = iMethods.Where(x=> x.Name == methodName).First();
-				string line = "public " + (method.IsStatic ? "static " : " ") +  (method.IsVirtual ? " override " : " new ");
-				line += method.ReturnType.FullName.Replace("+",".") + " ";
-				line += method.Name;
-				
-				string paramString = " (";
-				foreach(var p in method.GetParameters().OrderBy(x=> x.Position))
-				{
-					if(p.Position > 0)
-					{
-						paramString += " , ";
-					}
-					paramString += p.ParameterType.FullName.Replace("&","").Replace("+",".") + " " + p.Name;
-				}
-				paramString += ") {}";
-				line += paramString;
-				
-				WriteObsoleteLine(line);
+			//	writeMethod(includeType,method,true);
+			}
+			
+			BeginRegion("Excluded Methods");
+			foreach(var methodName in methodsExclude)
+			{
+				if(methodName == "BeginInit" || methodName == "EndInvoke" || methodName =="EndInit" || methodName == "PreProcessMessage" || methodName == "PreProcessControlMessage")
+					continue;
+				var method = iMethods.Where(x=> x.Name == methodName).First();
+				writeMethod(includeType,method,false);
 			}
 			
 			EndRegion();			
+		}
+		public static void writeMethod(Type includeType, MethodInfo method, bool include)
+		{
+			string line = "public " + (method.IsStatic ? "static " : " ") +  (method.IsVirtual ? " override " : " new ");
+				line += method.ReturnType.FullName.Replace("+",".") + " ";
+				line += method.Name;
+				
+				string paramNames  = "(";
+				string paramString = " (";
+				foreach(var p in method.GetParameters().OrderBy(x=> x.Position))
+				{
+					if(p.ParameterType.IsEnum)
+					{
+						if(!Enums.Contains(p.ParameterType))
+							Enums.Add(p.ParameterType);
+					}
+
+					if(p.Position > 0)
+					{
+						paramString += " , ";
+						paramNames += " , ";
+					}
+					paramNames += p.Name;
+					paramString += p.ParameterType.FullName.Replace("&","").Replace("+",".") + " " + p.Name;
+				}
+				var execute = (method.IsStatic ?  includeType.FullName.Replace("&",".").Replace("+",".") + "."  : " base.") + method.Name + paramNames + ")";
+				paramString += ") {" + (method.ReturnType.Name.ToLower() == "void" ? "" : "return ") + execute + ";}"; //( + ");") + "}";
+				line += paramString;
+				
+			if(include)
+				WriteLine(line);
+			else
+				WriteObsoleteLine(line);
 		}
 		
 		public static void BeginRegion(string region)
