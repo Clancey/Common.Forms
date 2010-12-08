@@ -9,6 +9,9 @@ namespace CreateCommonForms
 {
 	class MainClass
 	{
+		
+		
+		const bool obsolete_error = true;
 
 		static TextWriter m_writer = null;
 		
@@ -213,7 +216,7 @@ namespace CreateCommonForms
 			foreach(var eventName in eventsInclude.OrderBy(x=> x))
 			{
 				var theEvent = iEvents.Where(x=> x.Name == eventName).First();
-				string line = "public new " + theEvent.EventHandlerType.ToString().Replace("System.Windows.Forms.","Common.Forms.") + " " + theEvent.Name + " { get;set;}";
+				string line = "public new event " + theEvent.EventHandlerType.ToString().Replace("System.Windows.Forms.","Common.Forms.") + " " + theEvent.Name + ";";// + " { get;set;}";
 				WriteLine(line);
 			}
 			
@@ -223,7 +226,7 @@ namespace CreateCommonForms
 			foreach(var eventName in eventsExclude.OrderBy(x=> x))
 			{
 				var theEvent = iEvents.Where(x=> x.Name == eventName).First();
-				string line = "public new " + theEvent.EventHandlerType + " " + theEvent.Name + " { get;set;}";
+				string line = "public new event " + theEvent.EventHandlerType + " " + theEvent.Name + ";";//" { get;set;}";
 				WriteObsoleteLine(line);
 			}
 			EndRegion();
@@ -275,10 +278,10 @@ namespace CreateCommonForms
 		{
 			if(include)
 			{
-				WriteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get;set;}"); 
+				//WriteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get { return base." + prop.Name + ";}{set{base." + prop.Name + " = value ;}}"); 
 			}
 			else
-				WriteObsoleteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get;set;}"); 
+				WriteObsoleteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get{throw new NotImplementedException();}set{throw new NotImplementedException();}}"); 
 		}
 		private static void writeClassProperty(PropertyInfo prop,bool included)
 		{
@@ -291,7 +294,7 @@ namespace CreateCommonForms
 			else
 			*/
 			
-			var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
+			var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get{throw new NotImplementedException();}set{throw new NotImplementedException();}}";
 			WriteObsoleteLine(line);
 			
 		}
@@ -328,7 +331,7 @@ namespace CreateCommonForms
 		{
 			var iMethods = includeType.GetMethods(BindingFlags.Public|BindingFlags.Instance|BindingFlags.DeclaredOnly|BindingFlags.Static).Where(x=> !x.IsSpecialName ).ToList();//.Where(x=> !x.IsHideBySig).ToList();
 			var eMethods = excludeType.GetMethods();			
-			var methodsInclude = iMethods.Select(x=> x.Name).Intersect(eMethods.Select(y=> y.Name)).Distinct().ToList();
+			 var methodsInclude = iMethods.Select(x=> x.Name).Intersect(eMethods.Select(y=> y.Name)).Distinct().ToList();
 			var methodsExclude = iMethods.Select(x=> x.Name).Except(methodsInclude).Distinct().ToList();
 			foreach(var methodName in methodsInclude)
 			{
@@ -391,7 +394,7 @@ namespace CreateCommonForms
 		}
 		public static void BeginObsoleteBlock(string line)
 	    {
-	      	WriteLine("[Obsolete(\"This method is not cross-platform compatible.\", true)]");
+	      	WriteLine("[Obsolete(\"This method is not cross-platform compatible.\", " + (obsolete_error ? "true":"false" )  + ")]");
 	      	BeginBlock(line);
 	    }
 		
