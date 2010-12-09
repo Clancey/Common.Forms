@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Text;
 using System.Collections.Generic;
+using System.ComponentModel;
 namespace CreateCommonForms
 {
 	class MainClass
@@ -264,25 +265,39 @@ namespace CreateCommonForms
 		}
 		private static void writeEnumProperty(PropertyInfo prop,bool include)
 		{
+			if(prop.Name == "DefaultBackColor")
+				Console.Write("backcolor");
 			if(include)
 			{
 				//WriteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get { return base." + prop.Name + ";}{set{base." + prop.Name + " = value ;}}"); 
+				return;
 			}
-			else
-				WriteObsoleteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + "{get{throw new NotImplementedException();}set{throw new NotImplementedException();}}"); 
+			var ifDesign = "";
+			if(typeof(Component).IsAssignableFrom(prop.DeclaringType))
+				ifDesign = "  if( !this.DesignMode ) throw new NotImplementedException();";
+			
+			var getString = "get{ " + ifDesign + " return ";
+			var fullGetString = !prop.CanRead ? "" : (prop.GetGetMethod().IsStatic ? getString + prop.Name : getString + " base." + prop.Name) + ";}";
+
+			WriteObsoleteLine( "public new " + prop.PropertyType.Name + " " + prop.Name + " { " + fullGetString + "set{throw new NotImplementedException();}}"); 
 		}
 		private static void writeClassProperty(PropertyInfo prop,bool included)
 		{
-			/*
+			
 			if(included)
 			{
-				var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
-				WriteLine(line);
+				var includeLine = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get;set;}";
+				//WriteLine(line);
+				return;
 			}
-			else
-			*/
+			var ifDesign = "";
+			if(typeof(Component).IsAssignableFrom(prop.DeclaringType))
+				ifDesign = "  if( !this.DesignMode ) throw new NotImplementedException();";
+			var getString = "get{ " + ifDesign + " return ";
+			var fullGetString = !prop.CanRead ? "" : (prop.GetGetMethod().IsStatic ? getString + prop.Name : getString + " base." + prop.Name) + ";}";
+			var setString = !prop.CanWrite ? "" : "set{throw new NotImplementedException();}";
 			
-			var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {get{throw new NotImplementedException();}set{throw new NotImplementedException();}}";
+			var line = "public new " + prop.PropertyType.FullName.Replace("+",".") + " " + prop.Name + " {" +  fullGetString +  setString + "}";
 			WriteObsoleteLine(line);
 			
 		}
