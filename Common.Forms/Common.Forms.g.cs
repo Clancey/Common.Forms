@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Common.Forms
 {
-	public partial class Button : System.Windows.Forms.Button,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget,System.Windows.Forms.IButtonControl
+	public partial class Button : System.Windows.Forms.Button
 	{
 		#region Constructors
 		#endregion
@@ -52,8 +52,6 @@ namespace Common.Forms
 		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new AnchorStyles Anchor { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Anchor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -158,8 +156,12 @@ namespace Common.Forms
 		public new event System.EventHandler GotFocus;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -241,14 +243,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler PaddingChanged;
@@ -292,7 +286,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class CheckBox : System.Windows.Forms.CheckBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class CheckBox : System.Windows.Forms.CheckBox
 	{
 		#region Constructors
 		#endregion
@@ -344,8 +338,6 @@ namespace Common.Forms
 		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new AnchorStyles Anchor { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Anchor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -450,8 +442,12 @@ namespace Common.Forms
 		public new event System.EventHandler GotFocus;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -539,14 +535,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler PaddingChanged;
@@ -588,7 +576,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class CheckedListBox : System.Windows.Forms.CheckedListBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class CheckedListBox : System.Windows.Forms.CheckedListBox
 	{
 		#region Constructors
 		#endregion
@@ -670,8 +658,6 @@ namespace Common.Forms
 		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new AnchorStyles Anchor { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Anchor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -771,8 +757,12 @@ namespace Common.Forms
 		public new event System.EventHandler GotFocus;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -874,14 +864,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler PaddingChanged;
@@ -937,7 +919,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class ComboBox : System.Windows.Forms.ComboBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class ComboBox : System.Windows.Forms.ComboBox
 	{
 		#region Constructors
 		#endregion
@@ -1007,8 +989,6 @@ namespace Common.Forms
 		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new AnchorStyles Anchor { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Anchor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1105,8 +1085,12 @@ namespace Common.Forms
 		public new event Common.Forms.KeyPressEventHandler KeyPress;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		public new event System.EventHandler TextChanged;
 		#region Excluded
@@ -1211,14 +1195,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler PaddingChanged;
@@ -1282,7 +1258,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class Control : System.Windows.Forms.Control,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class Control : System.Windows.Forms.Control
 	{
 		#region Constructors
 		public Control () : base ()
@@ -1698,7 +1674,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class DataGridViewButtonCell : System.Windows.Forms.DataGridViewButtonCell,System.IDisposable,System.ICloneable
+	public partial class DataGridViewButtonCell : System.Windows.Forms.DataGridViewButtonCell
 	{
 		#region Constructors
 		#endregion
@@ -1786,7 +1762,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class DataGridViewButtonColumn : System.Windows.Forms.DataGridViewButtonColumn,System.IDisposable,System.ICloneable,System.ComponentModel.IComponent
+	public partial class DataGridViewButtonColumn : System.Windows.Forms.DataGridViewButtonColumn
 	{
 		#region Constructors
 		#endregion
@@ -1878,7 +1854,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCheckBoxCell,System.IDisposable,System.ICloneable,System.Windows.Forms.IDataGridViewEditingCell
+	public partial class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCheckBoxCell
 	{
 		#region Constructors
 		public DataGridViewCheckBoxCell () : base ()
@@ -1991,7 +1967,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class DataGridViewCheckBoxColumn : System.Windows.Forms.DataGridViewCheckBoxColumn,System.IDisposable,System.ICloneable,System.ComponentModel.IComponent
+	public partial class DataGridViewCheckBoxColumn : System.Windows.Forms.DataGridViewCheckBoxColumn
 	{
 		#region Constructors
 		public DataGridViewCheckBoxColumn () : base ()
@@ -2094,7 +2070,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class Form : System.Windows.Forms.Form,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget
+	public partial class Form : System.Windows.Forms.Form
 	{
 		#region Constructors
 		#endregion
@@ -2567,7 +2543,7 @@ namespace Common.Forms
 	
 	public delegate void  KeyPressEventHandler (System.Object sender , Common.Forms.KeyPressEventArgs e );
 	
-	public partial class Label : System.Windows.Forms.Label,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class Label : System.Windows.Forms.Label
 	{
 		#region Constructors
 		#endregion
@@ -2709,8 +2685,12 @@ namespace Common.Forms
 		public new event Common.Forms.KeyPressEventHandler KeyPress;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		public new event System.EventHandler TextChanged;
 		#region Excluded
@@ -2793,14 +2773,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler PaddingChanged;
@@ -2844,7 +2816,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class ListBox : System.Windows.Forms.ListBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class ListBox : System.Windows.Forms.ListBox
 	{
 		#region Constructors
 		#endregion
@@ -2920,8 +2892,6 @@ namespace Common.Forms
 		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new AnchorStyles Anchor { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Anchor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3021,8 +2991,12 @@ namespace Common.Forms
 		public new event System.EventHandler GotFocus;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3121,14 +3095,6 @@ namespace Common.Forms
 		public new event System.EventHandler MouseCaptureChanged;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3229,7 +3195,7 @@ namespace Common.Forms
 	
 	public delegate void  MouseEventHandler (System.Object sender , Common.Forms.MouseEventArgs e );
 	
-	public partial class PaintEventArgs : System.Windows.Forms.PaintEventArgs,System.IDisposable
+	public partial class PaintEventArgs : System.Windows.Forms.PaintEventArgs
 	{
 		#region Constructors
 		public PaintEventArgs (System.Drawing.Graphics graphics , System.Drawing.Rectangle clipRect) : base (graphics , clipRect)
@@ -3255,7 +3221,290 @@ namespace Common.Forms
 	
 	public delegate void  PaintEventHandler (System.Object sender , Common.Forms.PaintEventArgs e );
 	
-	public partial class TextBox : System.Windows.Forms.TextBox,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class Panel : System.Windows.Forms.Panel
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean AutoSize {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoSize;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new AutoSizeMode AutoSizeMode { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoSizeMode;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String Text {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Text;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean AutoScroll {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScroll;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Size AutoScrollMargin {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollMargin;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Size AutoScrollMinSize {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollMinSize;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Point AutoScrollPosition {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollPosition;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Rectangle DisplayRectangle {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.DisplayRectangle;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.ScrollableControl.DockPaddingEdges DockPadding {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.DockPadding;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.HScrollProperties HorizontalScroll {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.HorizontalScroll;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.VScrollProperties VerticalScroll {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.VerticalScroll;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.AccessibleObject AccessibilityObject {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibilityObject;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String AccessibleDefaultActionDescription {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleDefaultActionDescription;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String AccessibleDescription {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleDescription;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String AccessibleName {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleName;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Size MaximumSize {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.MaximumSize;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Size MinimumSize {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.MinimumSize;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Image BackgroundImage {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.BackgroundImage;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new ImageLayout BackgroundImageLayout { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.BackgroundImageLayout;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.BindingContext BindingContext {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.BindingContext;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Int32 Bottom {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Bottom;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean CanFocus {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.CanFocus;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean CanSelect {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.CanSelect;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean Capture {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Capture;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean CausesValidation {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.CausesValidation;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String CompanyName {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.CompanyName;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean ContainsFocus {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ContainsFocus;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.ContextMenu ContextMenu {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ContextMenu;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.ContextMenuStrip ContextMenuStrip {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ContextMenuStrip;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.Control.ControlCollection Controls {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Controls;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean Created {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Created;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.Cursor Cursor {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Cursor;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.ControlBindingsCollection DataBindings {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.DataBindings;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean Disposing {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Disposing;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new DockStyle Dock { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Dock;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean Enabled {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Enabled;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Font Font {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Font;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Color ForeColor {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ForeColor;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean HasChildren {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.HasChildren;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new ImeMode ImeMode { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ImeMode;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean InvokeRequired {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.InvokeRequired;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean IsAccessible {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.IsAccessible;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean IsDisposed {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.IsDisposed;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean IsHandleCreated {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.IsHandleCreated;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean IsMirrored {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.IsMirrored;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.Layout.LayoutEngine LayoutEngine {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.LayoutEngine;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Int32 Left {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Left;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.Padding Margin {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Margin;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.Padding Padding {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Padding;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.Control Parent {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Parent;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Size PreferredSize {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.PreferredSize;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String ProductName {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ProductName;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String ProductVersion {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ProductVersion;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean RecreatingHandle {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RecreatingHandle;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Drawing.Region Region {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Region;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Int32 Top {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Top;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.Control TopLevelControl {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TopLevelControl;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean UseWaitCursor {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.UseWaitCursor;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.IWindowTarget WindowTarget {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.WindowTarget;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.ComponentModel.IContainer Container {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Container;}}
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler AutoSizeChanged;
+		public new event System.EventHandler GotFocus;
+		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
+		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
+		public new event Common.Forms.MouseEventHandler MouseMove;
+		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
+		public new event System.EventHandler SizeChanged;
+		#region Excluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler BackColorChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler BackgroundImageChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler BackgroundImageLayoutChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler BindingContextChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler CausesValidationChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.UICuesEventHandler ChangeUICues;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler Click;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler ClientSizeChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler ContextMenuChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler ContextMenuStripChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.ControlEventHandler ControlAdded;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.ControlEventHandler ControlRemoved;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler CursorChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler Disposed;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler DockChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler DoubleClick;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.DragEventHandler DragDrop;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.DragEventHandler DragEnter;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler DragLeave;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.DragEventHandler DragOver;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler EnabledChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler Enter;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler FontChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler ForeColorChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.GiveFeedbackEventHandler GiveFeedback;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler HandleCreated;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler HandleDestroyed;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.HelpEventHandler HelpRequested;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler ImeModeChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.InvalidateEventHandler Invalidated;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.KeyEventHandler KeyDown;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.KeyPressEventHandler KeyPress;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.KeyEventHandler KeyUp;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.LayoutEventHandler Layout;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler Leave;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler LocationChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler LostFocus;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler MarginChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler MouseCaptureChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.MouseEventHandler MouseClick;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler Move;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler PaddingChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.PaintEventHandler Paint;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler ParentChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.QueryContinueDragEventHandler QueryContinueDrag;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler RegionChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler Resize;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler RightToLeftChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.Windows.Forms.ScrollEventHandler Scroll;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler StyleChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler SystemColorsChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler TabIndexChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler TabStopChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler TextChanged;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler Validated;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.ComponentModel.CancelEventHandler Validating;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new event System.EventHandler VisibleChanged;
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public partial class TextBox : System.Windows.Forms.TextBox
 	{
 		#region Constructors
 		#endregion
@@ -3419,8 +3668,12 @@ namespace Common.Forms
 		public new event Common.Forms.KeyPressEventHandler KeyPress;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		public new event System.EventHandler TextChanged;
 		#region Excluded
@@ -3511,14 +3764,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler MultilineChanged;
@@ -3566,7 +3811,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class TrackBar : System.Windows.Forms.TrackBar,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISupportInitialize,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IDropTarget
+	public partial class TrackBar : System.Windows.Forms.TrackBar
 	{
 		#region Constructors
 		#endregion
@@ -3608,8 +3853,6 @@ namespace Common.Forms
 		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new AnchorStyles Anchor { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Anchor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3705,8 +3948,12 @@ namespace Common.Forms
 		public new event System.EventHandler GotFocus;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3790,14 +4037,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler PaddingChanged;
@@ -3847,7 +4086,7 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public partial class UserControl : System.Windows.Forms.UserControl,System.Windows.Forms.IWin32Window,System.IDisposable,System.ComponentModel.ISynchronizeInvoke,System.ComponentModel.IComponent,System.Windows.Forms.IBindableComponent,System.Windows.Forms.IContainerControl,System.Windows.Forms.IDropTarget
+	public partial class UserControl : System.Windows.Forms.UserControl
 	{
 		#region Constructors
 		#endregion
@@ -3901,8 +4140,6 @@ namespace Common.Forms
 		public new AccessibleRole AccessibleRole { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AccessibleRole;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowDrop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowDrop;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new AnchorStyles Anchor { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Anchor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Point AutoScrollOffset {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoScrollOffset;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4003,8 +4240,12 @@ namespace Common.Forms
 		public new event System.EventHandler GotFocus;
 		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
 		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
 		public new event Common.Forms.MouseEventHandler MouseMove;
 		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
 		public new event System.EventHandler SizeChanged;
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4090,14 +4331,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.Windows.Forms.MouseEventHandler MouseClick;
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseEnter;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseHover;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.EventHandler MouseLeave;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new event System.Windows.Forms.MouseEventHandler MouseWheel;
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler Move;
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new event System.EventHandler PaddingChanged;
@@ -4143,96 +4376,6 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	#region Interfaces
-	public interface IUIService : System.Windows.Forms.Design.IUIService
-	{
-	}
-	
-	public interface IWindowsFormsEditorService : System.Windows.Forms.Design.IWindowsFormsEditorService
-	{
-	}
-	
-	public interface ICom2PropertyPageDisplayService : System.Windows.Forms.ComponentModel.Com2Interop.ICom2PropertyPageDisplayService
-	{
-	}
-	
-	public interface IComPropertyBrowser : System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser
-	{
-	}
-	
-	public interface IButtonControl : System.Windows.Forms.IButtonControl
-	{
-	}
-	
-	public interface IBindableComponent : System.Windows.Forms.IBindableComponent
-	{
-	}
-	
-	public interface ICommandExecutor : System.Windows.Forms.ICommandExecutor
-	{
-	}
-	
-	public interface IComponentEditorPageSite : System.Windows.Forms.IComponentEditorPageSite
-	{
-	}
-	
-	public interface IContainerControl : System.Windows.Forms.IContainerControl
-	{
-	}
-	
-	public interface ICurrencyManagerProvider : System.Windows.Forms.ICurrencyManagerProvider
-	{
-	}
-	
-	public interface IDataGridColumnStyleEditingNotificationService : System.Windows.Forms.IDataGridColumnStyleEditingNotificationService
-	{
-	}
-	
-	public interface IDataGridEditingService : System.Windows.Forms.IDataGridEditingService
-	{
-	}
-	
-	public interface IDataGridViewEditingCell : System.Windows.Forms.IDataGridViewEditingCell
-	{
-	}
-	
-	public interface IDataGridViewEditingControl : System.Windows.Forms.IDataGridViewEditingControl
-	{
-	}
-	
-	public interface IDataObject : System.Windows.Forms.IDataObject
-	{
-	}
-	
-	public interface IDropTarget : System.Windows.Forms.IDropTarget
-	{
-	}
-	
-	public interface IFeatureSupport : System.Windows.Forms.IFeatureSupport
-	{
-	}
-	
-	public interface IFileReaderService : System.Windows.Forms.IFileReaderService
-	{
-	}
-	
-	public interface IMessageFilter : System.Windows.Forms.IMessageFilter
-	{
-	}
-	
-	public interface IRootGridEntry : System.Windows.Forms.PropertyGridInternal.IRootGridEntry
-	{
-	}
-	
-	public interface IWin32Window : System.Windows.Forms.IWin32Window
-	{
-	}
-	
-	public interface IWindowTarget : System.Windows.Forms.IWindowTarget
-	{
-	}
-	
-	#endregion
 	#region Enums
 	#endregion
 }

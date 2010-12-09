@@ -17,45 +17,62 @@ namespace CreateCommonForms
 		static TextWriter m_writer = null;
 		
     	public static int Indent = 0;
-		static string filePath = @"../../Common.Forms/Common.Forms.g.cs";
+		static string WinFilePath = @"../../Common.Forms/Common.Forms.g.cs";
+		static string MacFilePath = @"../../Common.Forms(mac)/Common.Forms.g.cs";
 		public static List<Type> Enums = new List<Type>();
 		public static void Main (string[] args)
+		{			
+			var type = args.Count() > 0 ?  args[0] : ""; 
+			Console.WriteLine(type);
+				
+			var Windows = typeof(ButtonBase).Assembly;
+			
+			var MonoMac = typeof(MonoMac.Windows.Forms.EmptyObject).Assembly;
+			
+			if(type.ToLower() == "mac")
+			{
+				writeFile(MacFilePath,MonoMac,Windows,true);
+			}
+			else
+			{
+				
+				writeFile(WinFilePath,Windows,MonoMac,false);
+			}
+		}
+		public static void writeFile(string file,Assembly include, Assembly exclude, bool monomac)
 		{
-			//var winPath = args[0]; 
+			
 			var dir = Directory.GetCurrentDirectory ();
 			//m_writer 
-			if(File.Exists(filePath))
-				File.Delete(filePath);
-			m_writer = new StreamWriter(filePath);// File.Create (filePath);
+			if(File.Exists(file))
+				File.Delete(file);
+			m_writer = new StreamWriter(file);// File.Create (filePath);
 			WriteLine ("using System;");
 			WriteLine ("using System.Windows.Forms;");
 			WriteLine ("using System.Drawing;");
-			//WriteLine ("using System.Windows.Forms;");
+			if(monomac) WriteLine ("using MonoMac.AppKit;");
 			WriteLine ("");
 			BeginBlock ("namespace Common.Forms");
 			
-			
-			var Windows = typeof(ButtonBase).Assembly;
-			var wClasses = Windows.GetTypes ().Where (x => x.IsPublic && x.IsClass && !x.Name.Contains("Application")).ToList ();
-			
-			var MonoMac = typeof(MonoMac.Windows.Forms.EmptyObject).Assembly;
-			var mClasses = MonoMac.GetTypes ().Where (x => x.IsPublic && x.IsClass).ToList ();
-			
-			var Combined = wClasses.Where (x => mClasses.Where (y => y.Name == x.Name).Count () > 0).ToList ();
+			var iClasses = include.GetTypes ().Where (x => x.IsPublic && x.IsClass && !x.Name.Contains("Application")).ToList ();
+			var eClasses = exclude.GetTypes ().Where (x => x.IsPublic && x.IsClass && !x.Name.Contains("Application")).ToList ();
+					
+			var Combined = iClasses.Where (x => eClasses.Where (y => y.Name == x.Name).Count () > 0).ToList ();
 			foreach (var theClass in Combined)
 			{
-				WriteClass (theClass, mClasses.Where (x => x.Name == theClass.Name).FirstOrDefault ());
+				WriteClass (theClass, eClasses.Where (x => x.Name == theClass.Name).FirstOrDefault ());
 				Console.WriteLine (theClass.FullName);
 			}
+			/*
 			BeginRegion("Interfaces");
-			foreach(var theClass in Windows.GetTypes().Where(x=> x.IsInterface).Where(x=> x.IsPublic))
+			foreach(var theClass in include.GetTypes().Where(x=> x.IsInterface).Where(x=> x.IsPublic))
 			{
 				WriteInterface (theClass);
 				Console.WriteLine (theClass.FullName);
 			}
 			
 			EndRegion();
-			
+			*/
 			BeginRegion("Enums");
 			foreach(var theEnum in Enums)
 			{
@@ -68,11 +85,12 @@ namespace CreateCommonForms
 			EndBlock();
 	        m_writer.Flush();
 	        m_writer.Close();
+	
 		}
 		public static void WriteClass (Type includeType, Type exludeType)
 		{
 			var interfaces = includeType.GetInterfaces().Where(x=> x.IsPublic);
-			
+			interfaces = new Type[]{};
 			if(includeType.Name == "Form")
 				Console.WriteLine("Form");
 			
@@ -215,7 +233,7 @@ namespace CreateCommonForms
 			foreach(var eventName in eventsExclude.OrderBy(x=> x))
 			{
 				var theEvent = iEvents.Where(x=> x.Name == eventName).First();
-				string line = "public new event " + theEvent.EventHandlerType + " " + theEvent.Name + ";";//" { get;set;}";
+				string line = "public new event " + theEvent.EventHandlerType.Namespace + "." + theEvent.EventHandlerType.Name.Replace("`","").Replace("1","") + " " + theEvent.Name + ";";//" { get;set;}";
 				WriteObsoleteLine(line);
 			}
 			EndRegion();
