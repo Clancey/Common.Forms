@@ -341,7 +341,7 @@ namespace CreateCommonForms
 		public static void writeMethod(Type includeType, MethodInfo method, bool include)
 		{
 			string line = "public " + (method.IsStatic ? "static " : " ") +  (method.IsVirtual ? " override " : " new ");
-				line += (method.ReturnType.Namespace.Contains("System.Windows.Forms") ? (method.ReturnType.Namespace + ".") : "") +  method.ReturnType.Name + " ";
+				line += (method.ReturnType.Namespace.Contains("System.Windows.Forms") ? (method.ReturnType.Namespace + ".") : "") +  (method.ReturnType.Name.ToLower() == "void" ? "void" : method.ReturnType.Name) + " ";
 				line += method.Name;
 				
 				string paramNames  = "(";
