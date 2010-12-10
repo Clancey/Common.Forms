@@ -267,6 +267,8 @@ namespace CreateCommonForms
 			BeginRegion("Excluded");
 			foreach(var propName in propsExclude)
 			{
+				if(propName == "Site" || (propName == "ActiveForm" && includeType.Name == "Form"))
+					continue;
 				var prop = iProps.Where(x=> x.Name == propName).First();
 				if(prop.PropertyType.IsEnum)
 				{

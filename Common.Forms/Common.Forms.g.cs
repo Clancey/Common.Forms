@@ -135,8 +135,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Top {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Top;}set{throw new NotImplementedException();}}
@@ -420,8 +418,6 @@ namespace Common.Forms
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -736,8 +732,6 @@ namespace Common.Forms
 		public new System.Drawing.Region Region {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Region;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1063,8 +1057,6 @@ namespace Common.Forms
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1420,8 +1412,6 @@ namespace Common.Forms
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 TabIndex {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabIndex;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1815,8 +1805,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new DataGridViewTriState Resizable { get{  return  base.Resizable;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{  return  base.Site;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new DataGridViewColumnSortMode SortMode { get{  return  base.SortMode;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String ToolTipText {get{  return  base.ToolTipText;}set{throw new NotImplementedException();}}
@@ -2033,8 +2021,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new DataGridViewTriState Resizable { get{  return  base.Resizable;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{  return  base.Site;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new DataGridViewColumnSortMode SortMode { get{  return  base.SortMode;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String ToolTipText {get{  return  base.ToolTipText;}set{throw new NotImplementedException();}}
@@ -2080,8 +2066,6 @@ namespace Common.Forms
 		#endregion
 		#region Properties
 		#region Excluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.Form ActiveForm {get{   if( !this.DesignMode ) throw new NotImplementedException(); return ActiveForm;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AllowTransparency {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AllowTransparency;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2276,8 +2260,6 @@ namespace Common.Forms
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Object Tag {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Tag;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2634,8 +2616,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Disposing;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new DockStyle Dock { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Dock;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Color ForeColor {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ForeColor;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.HasChildren;}}
@@ -2667,8 +2647,6 @@ namespace Common.Forms
 		public new System.Boolean RecreatingHandle {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RecreatingHandle;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Region Region {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Region;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Control TopLevelControl {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TopLevelControl;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -2970,8 +2948,6 @@ namespace Common.Forms
 		public new System.Drawing.Region Region {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Region;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3354,8 +3330,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Int32 Top {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Top;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.Control TopLevelControl {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TopLevelControl;}}
@@ -3529,8 +3503,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Char PasswordChar {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.PasswordChar;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new ScrollBars ScrollBars { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ScrollBars;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AcceptsTab {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AcceptsTab;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean AutoSize {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.AutoSize;}set{throw new NotImplementedException();}}
@@ -3617,8 +3589,6 @@ namespace Common.Forms
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Disposing {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Disposing;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new DockStyle Dock { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Dock;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean HasChildren {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.HasChildren;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new ImeMode ImeMode { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ImeMode;}set{throw new NotImplementedException();}}
@@ -3648,8 +3618,6 @@ namespace Common.Forms
 		public new System.Boolean RecreatingHandle {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RecreatingHandle;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Drawing.Region Region {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Region;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -3927,8 +3895,6 @@ namespace Common.Forms
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -4218,8 +4184,6 @@ namespace Common.Forms
 		public new System.Int32 Right {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Right;}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new RightToLeft RightToLeft { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.RightToLeft;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.ComponentModel.ISite Site {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Site;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean TabStop {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.TabStop;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]

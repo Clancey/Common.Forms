@@ -784,6 +784,8 @@ namespace Common.Forms
 		#endregion
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override void ViewDidMoveToSuperview () { base.ViewDidMoveToSuperview();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   override void KeyDown (MonoMac.AppKit.NSEvent theEvent) { base.KeyDown(theEvent);}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   override void KeyUp (MonoMac.AppKit.NSEvent theEvent) { base.KeyUp(theEvent);}
@@ -832,6 +834,8 @@ namespace Common.Forms
 		#region Excluded
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.String[] Lines {get{  return  base.Lines;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new ScrollBars ScrollBars { get{  return  base.ScrollBars;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Boolean Multiline {get{  return  base.Multiline;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
