@@ -48,7 +48,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MonoMac.Windows.Form\MonoMac.Windows.Forms\MonoMac.Windows.Forms.csproj">
+    <ProjectReference Include="..\..\MonoMac.Windows.Forms\MonoMac.Windows.Forms\MonoMac.Windows.Forms.csproj">
       <Project>{FFD271D2-67B3-4FAB-99BF-8E28BB6F0B76}</Project>
       <Name>MonoMac.Windows.Forms</Name>
     </ProjectReference>

@@ -105,13 +105,16 @@ namespace CreateCommonForms
 				if(includeType.IsSealed)
 					WriteSealedClass(includeType,exludeType);
 				else	
-					BeginBlock("public partial class " + includeType.Name + " : " + includeType.Namespace + "." + includeType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> (x.Namespace + "." + x.Name)).ToArray())): ""));
-				WriteConstructors(includeType,exludeType);
-				WriteClassFields(includeType,exludeType);
-				WriteClassProperties(includeType,exludeType);
-				WriteClassEvents(includeType,exludeType);
-				WriteClassMethods(includeType,exludeType);
-				EndBlock();
+				{
+					
+					BeginBlock("public " + ( includeType.IsAbstract ? "abstract" : "") +  " partial class " + includeType.Name + " : " + includeType.Namespace + "." + includeType.Name + (interfaces.Count() > 0 ? ("," + string.Join(",",interfaces.Select(x=> (x.Namespace + "." + x.Name)).ToArray())): ""));
+					WriteConstructors(includeType,exludeType);
+					WriteClassFields(includeType,exludeType);
+					WriteClassProperties(includeType,exludeType);
+					WriteClassEvents(includeType,exludeType);
+					WriteClassMethods(includeType,exludeType);
+					EndBlock();
+				}
 			}
 		}
 		
@@ -125,7 +128,7 @@ namespace CreateCommonForms
 		public static void WriteDelegate(Type type)
 		{		
 			var members = type.GetMember("Invoke");
-			var invoke = members.FirstOrDefault().ToString().Replace("System.Windows.Forms","Common.Forms");
+			var invoke = members.FirstOrDefault().ToString();//.Replace("System.Windows.Forms","Common.Forms");
 			var newString = "public delegate ";
 			var invokeIndex = invoke.IndexOf("Invoke");
 			newString += invoke.Substring(0,invokeIndex).ToLower();
@@ -365,7 +368,7 @@ namespace CreateCommonForms
 			BeginRegion("Excluded Methods");
 			foreach(var methodName in methodsExclude)
 			{
-				if(methodName == "BeginInit" || methodName == "EndInvoke" || methodName =="EndInit" || methodName == "PreProcessMessage" || methodName == "PreProcessControlMessage")
+				if(methodName == "BeginInit" || methodName == "EndInvoke" || methodName =="EndInit" || methodName == "PreProcessMessage" || methodName == "PreProcessControlMessage" || methodName == "PerformClick")
 					continue;
 				var method = iMethods.Where(x=> x.Name == methodName).First();
 				writeMethod(includeType,method,false);
