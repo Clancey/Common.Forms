@@ -25,7 +25,7 @@ namespace CreateCommonForms
 			var type = args.Count() > 0 ?  args[0] : ""; 
 			Console.WriteLine(type);
 				
-			var Windows = typeof(ButtonBase).Assembly;
+			var Windows = typeof(System.Windows.Forms.AccessibleObject).Assembly;
 			
 			var MonoMac = typeof(MonoMac.Windows.Forms.EmptyObject).Assembly;
 			

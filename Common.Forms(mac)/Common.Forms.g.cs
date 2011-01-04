@@ -211,10 +211,6 @@ namespace Common.Forms
 		#endregion
 		#region Properties
 		#region Excluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.EventHandler SelectedIndexChanged {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.SelectedIndexChanged;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.EventHandler SelectedValueChanged {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.SelectedValueChanged;}set{throw new NotImplementedException();}}
 		#endregion
 		#endregion
 		#region Events
@@ -278,6 +274,7 @@ namespace Common.Forms
 		public new event System.EventHandler RegionChanged;
 		public new event System.EventHandler Resize;
 		public new event System.EventHandler RightToLeftChanged;
+		public new event System.EventHandler SelectedValueChanged;
 		public new event System.EventHandler SizeChanged;
 		public new event System.EventHandler StyleChanged;
 		public new event System.EventHandler SystemColorsChanged;
@@ -300,12 +297,12 @@ namespace Common.Forms
 		#endregion
 		#region Fields
 		#region Exluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean shouldDraw;
 		#endregion
 		#endregion
 		#region Properties
 		#region Excluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean shouldDraw {get{  return  base.shouldDraw;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public new System.Windows.Forms.PaintEventHandler Paint {get{  return  base.Paint;}set{throw new NotImplementedException();}}
 		[Obsolete("This method is not cross-platform compatible.", true)]
@@ -1071,834 +1068,6 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public  partial class BaseCollection : System.Windows.Forms.BaseCollection
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class Binding : System.Windows.Forms.Binding
-	{
-		#region Constructors
-		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember) : base (propertyName , dataSource , dataMember)
-		{
-		}
-		
-		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled) : base (propertyName , dataSource , dataMember , formattingEnabled)
-		{
-		}
-		
-		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode)
-		{
-		}
-		
-		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode , System.Object nullValue) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode , nullValue)
-		{
-		}
-		
-		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode , System.Object nullValue , System.String formatString) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode , nullValue , formatString)
-		{
-		}
-		
-		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode , System.Object nullValue , System.String formatString , System.IFormatProvider formatInfo) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode , nullValue , formatString , formatInfo)
-		{
-		}
-		
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event Common.Forms.BindingCompleteEventHandler BindingComplete;
-		public new event Common.Forms.ConvertEventHandler Format;
-		public new event Common.Forms.ConvertEventHandler Parse;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class BindingContext : System.Windows.Forms.BindingContext
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public abstract partial class BindingManagerBase : System.Windows.Forms.BindingManagerBase
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event Common.Forms.BindingCompleteEventHandler BindingComplete;
-		public new event System.EventHandler CurrentChanged;
-		public new event System.EventHandler CurrentItemChanged;
-		public new event Common.Forms.BindingManagerDataErrorEventHandler DataError;
-		public new event System.EventHandler PositionChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class ControlBindingsCollection : System.Windows.Forms.ControlBindingsCollection
-	{
-		#region Constructors
-		public ControlBindingsCollection (System.Windows.Forms.IBindableComponent control) : base (control)
-		{
-		}
-		
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;
-		public new event System.ComponentModel.CollectionChangeEventHandler CollectionChanging;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public class CurrencyManager
-	{
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class ListBindingConverter : System.Windows.Forms.ListBindingConverter
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public class ListBindingHelper
-	{
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class PropertyManager : System.Windows.Forms.PropertyManager
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event Common.Forms.BindingCompleteEventHandler BindingComplete;
-		public new event System.EventHandler CurrentChanged;
-		public new event System.EventHandler CurrentItemChanged;
-		public new event Common.Forms.BindingManagerDataErrorEventHandler DataError;
-		public new event System.EventHandler PositionChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public class ArrangedElementCollection
-	{
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public class LayoutEngine
-	{
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class ContainerControl : System.Windows.Forms.ContainerControl
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event System.EventHandler AutoSizeChanged;
-		public new event System.EventHandler AutoValidateChanged;
-		public new event System.EventHandler BackColorChanged;
-		public new event System.EventHandler BackgroundImageChanged;
-		public new event System.EventHandler BackgroundImageLayoutChanged;
-		public new event System.EventHandler BindingContextChanged;
-		public new event System.EventHandler CausesValidationChanged;
-		public new event Common.Forms.UICuesEventHandler ChangeUICues;
-		public new event System.EventHandler Click;
-		public new event System.EventHandler ClientSizeChanged;
-		public new event System.EventHandler ContextMenuChanged;
-		public new event System.EventHandler ContextMenuStripChanged;
-		public new event Common.Forms.ControlEventHandler ControlAdded;
-		public new event Common.Forms.ControlEventHandler ControlRemoved;
-		public new event System.EventHandler CursorChanged;
-		public new event System.EventHandler Disposed;
-		public new event System.EventHandler DockChanged;
-		public new event System.EventHandler DoubleClick;
-		public new event Common.Forms.DragEventHandler DragDrop;
-		public new event Common.Forms.DragEventHandler DragEnter;
-		public new event System.EventHandler DragLeave;
-		public new event Common.Forms.DragEventHandler DragOver;
-		public new event System.EventHandler EnabledChanged;
-		public new event System.EventHandler Enter;
-		public new event System.EventHandler FontChanged;
-		public new event System.EventHandler ForeColorChanged;
-		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
-		public new event System.EventHandler GotFocus;
-		public new event System.EventHandler HandleCreated;
-		public new event System.EventHandler HandleDestroyed;
-		public new event Common.Forms.HelpEventHandler HelpRequested;
-		public new event System.EventHandler ImeModeChanged;
-		public new event Common.Forms.InvalidateEventHandler Invalidated;
-		public new event Common.Forms.KeyEventHandler KeyDown;
-		public new event Common.Forms.KeyPressEventHandler KeyPress;
-		public new event Common.Forms.KeyEventHandler KeyUp;
-		public new event Common.Forms.LayoutEventHandler Layout;
-		public new event System.EventHandler Leave;
-		public new event System.EventHandler LocationChanged;
-		public new event System.EventHandler LostFocus;
-		public new event System.EventHandler MarginChanged;
-		public new event System.EventHandler MouseCaptureChanged;
-		public new event Common.Forms.MouseEventHandler MouseClick;
-		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
-		public new event Common.Forms.MouseEventHandler MouseDown;
-		public new event System.EventHandler MouseEnter;
-		public new event System.EventHandler MouseHover;
-		public new event System.EventHandler MouseLeave;
-		public new event Common.Forms.MouseEventHandler MouseMove;
-		public new event Common.Forms.MouseEventHandler MouseUp;
-		public new event Common.Forms.MouseEventHandler MouseWheel;
-		public new event System.EventHandler Move;
-		public new event System.EventHandler PaddingChanged;
-		public new event Common.Forms.PaintEventHandler Paint;
-		public new event System.EventHandler ParentChanged;
-		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
-		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
-		public new event System.EventHandler RegionChanged;
-		public new event System.EventHandler Resize;
-		public new event System.EventHandler RightToLeftChanged;
-		public new event Common.Forms.ScrollEventHandler Scroll;
-		public new event System.EventHandler SizeChanged;
-		public new event System.EventHandler StyleChanged;
-		public new event System.EventHandler SystemColorsChanged;
-		public new event System.EventHandler TabIndexChanged;
-		public new event System.EventHandler TabStopChanged;
-		public new event System.EventHandler TextChanged;
-		public new event System.EventHandler Validated;
-		public new event System.ComponentModel.CancelEventHandler Validating;
-		public new event System.EventHandler VisibleChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class ScrollableControl : System.Windows.Forms.ScrollableControl
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event System.EventHandler AutoSizeChanged;
-		public new event System.EventHandler BackColorChanged;
-		public new event System.EventHandler BackgroundImageChanged;
-		public new event System.EventHandler BackgroundImageLayoutChanged;
-		public new event System.EventHandler BindingContextChanged;
-		public new event System.EventHandler CausesValidationChanged;
-		public new event Common.Forms.UICuesEventHandler ChangeUICues;
-		public new event System.EventHandler Click;
-		public new event System.EventHandler ClientSizeChanged;
-		public new event System.EventHandler ContextMenuChanged;
-		public new event System.EventHandler ContextMenuStripChanged;
-		public new event Common.Forms.ControlEventHandler ControlAdded;
-		public new event Common.Forms.ControlEventHandler ControlRemoved;
-		public new event System.EventHandler CursorChanged;
-		public new event System.EventHandler Disposed;
-		public new event System.EventHandler DockChanged;
-		public new event System.EventHandler DoubleClick;
-		public new event Common.Forms.DragEventHandler DragDrop;
-		public new event Common.Forms.DragEventHandler DragEnter;
-		public new event System.EventHandler DragLeave;
-		public new event Common.Forms.DragEventHandler DragOver;
-		public new event System.EventHandler EnabledChanged;
-		public new event System.EventHandler Enter;
-		public new event System.EventHandler FontChanged;
-		public new event System.EventHandler ForeColorChanged;
-		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
-		public new event System.EventHandler GotFocus;
-		public new event System.EventHandler HandleCreated;
-		public new event System.EventHandler HandleDestroyed;
-		public new event Common.Forms.HelpEventHandler HelpRequested;
-		public new event System.EventHandler ImeModeChanged;
-		public new event Common.Forms.InvalidateEventHandler Invalidated;
-		public new event Common.Forms.KeyEventHandler KeyDown;
-		public new event Common.Forms.KeyPressEventHandler KeyPress;
-		public new event Common.Forms.KeyEventHandler KeyUp;
-		public new event Common.Forms.LayoutEventHandler Layout;
-		public new event System.EventHandler Leave;
-		public new event System.EventHandler LocationChanged;
-		public new event System.EventHandler LostFocus;
-		public new event System.EventHandler MarginChanged;
-		public new event System.EventHandler MouseCaptureChanged;
-		public new event Common.Forms.MouseEventHandler MouseClick;
-		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
-		public new event Common.Forms.MouseEventHandler MouseDown;
-		public new event System.EventHandler MouseEnter;
-		public new event System.EventHandler MouseHover;
-		public new event System.EventHandler MouseLeave;
-		public new event Common.Forms.MouseEventHandler MouseMove;
-		public new event Common.Forms.MouseEventHandler MouseUp;
-		public new event Common.Forms.MouseEventHandler MouseWheel;
-		public new event System.EventHandler Move;
-		public new event System.EventHandler PaddingChanged;
-		public new event Common.Forms.PaintEventHandler Paint;
-		public new event System.EventHandler ParentChanged;
-		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
-		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
-		public new event System.EventHandler RegionChanged;
-		public new event System.EventHandler Resize;
-		public new event System.EventHandler RightToLeftChanged;
-		public new event Common.Forms.ScrollEventHandler Scroll;
-		public new event System.EventHandler SizeChanged;
-		public new event System.EventHandler StyleChanged;
-		public new event System.EventHandler SystemColorsChanged;
-		public new event System.EventHandler TabIndexChanged;
-		public new event System.EventHandler TabStopChanged;
-		public new event System.EventHandler TextChanged;
-		public new event System.EventHandler Validated;
-		public new event System.ComponentModel.CancelEventHandler Validating;
-		public new event System.EventHandler VisibleChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public delegate void  ScrollEventHandler (System.Object sender , System.Windows.Forms.ScrollEventArgs e );
-	
-	public  partial class ScrollEventArgs : System.Windows.Forms.ScrollEventArgs
-	{
-		#region Constructors
-		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 newValue) : base (type , newValue)
-		{
-		}
-		
-		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 oldValue , System.Int32 newValue) : base (type , oldValue , newValue)
-		{
-		}
-		
-		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 newValue , System.Windows.Forms.ScrollOrientation scroll) : base (type , newValue , scroll)
-		{
-		}
-		
-		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 oldValue , System.Int32 newValue , System.Windows.Forms.ScrollOrientation scroll) : base (type , oldValue , newValue , scroll)
-		{
-		}
-		
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class Timer : System.Windows.Forms.Timer
-	{
-		#region Constructors
-		public Timer (System.ComponentModel.IContainer container) : base (container)
-		{
-		}
-		
-		public Timer () : base ()
-		{
-		}
-		
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		#endregion
-		#endregion
-		#region Events
-		public new event System.EventHandler Disposed;
-		public new event System.EventHandler Tick;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class MessageBox : System.Windows.Forms.MessageBox
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.DialogResult result;
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.IntPtr ClassHandle {get{  return  base.ClassHandle;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.String MessageText {get{  return  base.MessageText;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.String InformativeText {get{  return  base.InformativeText;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSImage Icon {get{  return  base.Icon;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSButton[] Buttons {get{  return  base.Buttons;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean ShowsHelp {get{  return  base.ShowsHelp;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.String HelpAnchor {get{  return  base.HelpAnchor;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new NSAlertStyle AlertStyle { get{  return  base.AlertStyle;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSAlertDelegate Delegate {get{  return  base.Delegate;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean ShowsSuppressionButton {get{  return  base.ShowsSuppressionButton;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSButton SuppressionButton {get{  return  base.SuppressionButton;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSView AccessoryView {get{  return  base.AccessoryView;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.Foundation.NSObject Window {get{  return  base.Window;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSAlertPredicate ShowHelp {get{  return  base.ShowHelp;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.IntPtr SuperHandle {get{  return  base.SuperHandle;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.IntPtr Handle {get{  return  base.Handle;}set{throw new NotImplementedException();}}
-		#endregion
-		#endregion
-		#region Events
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public static  new System.Windows.Forms.DialogResult GetResult (System.Int32 result , System.Windows.Forms.MessageBoxButtons buttons) {return System.Windows.Forms.MessageBox.GetResult(result , buttons);}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void SetupIcon (System.Windows.Forms.MessageBoxIcon icon) { base.SetupIcon(icon);}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void SetupButtons (System.Windows.Forms.MessageBoxButtons buttons) { base.SetupButtons(buttons);}
-		#endregion
-	}
-	
-	public  partial class Form : System.Windows.Forms.Form
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Windows.Forms.PaintEventHandler Paint {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Paint;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Object components {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.components;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.EventHandler Load {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Load;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new BorderStyle BorderStyle { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.BorderStyle;}set{throw new NotImplementedException();}}
-		#endregion
-		#endregion
-		#region Events
-		public new event System.EventHandler AutoSizeChanged;
-		public new event System.EventHandler AutoValidateChanged;
-		public new event System.EventHandler BackColorChanged;
-		public new event System.EventHandler BackgroundImageChanged;
-		public new event System.EventHandler BackgroundImageLayoutChanged;
-		public new event System.EventHandler BindingContextChanged;
-		public new event System.EventHandler CausesValidationChanged;
-		public new event Common.Forms.UICuesEventHandler ChangeUICues;
-		public new event System.EventHandler Click;
-		public new event System.EventHandler ClientSizeChanged;
-		public new event System.EventHandler ContextMenuChanged;
-		public new event System.EventHandler ContextMenuStripChanged;
-		public new event Common.Forms.ControlEventHandler ControlAdded;
-		public new event Common.Forms.ControlEventHandler ControlRemoved;
-		public new event System.EventHandler CursorChanged;
-		public new event System.EventHandler Disposed;
-		public new event System.EventHandler DockChanged;
-		public new event System.EventHandler DoubleClick;
-		public new event Common.Forms.DragEventHandler DragDrop;
-		public new event Common.Forms.DragEventHandler DragEnter;
-		public new event System.EventHandler DragLeave;
-		public new event Common.Forms.DragEventHandler DragOver;
-		public new event System.EventHandler EnabledChanged;
-		public new event System.EventHandler Enter;
-		public new event System.EventHandler FontChanged;
-		public new event System.EventHandler ForeColorChanged;
-		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
-		public new event System.EventHandler GotFocus;
-		public new event System.EventHandler HandleCreated;
-		public new event System.EventHandler HandleDestroyed;
-		public new event Common.Forms.HelpEventHandler HelpRequested;
-		public new event System.EventHandler ImeModeChanged;
-		public new event Common.Forms.InvalidateEventHandler Invalidated;
-		public new event Common.Forms.KeyEventHandler KeyDown;
-		public new event Common.Forms.KeyPressEventHandler KeyPress;
-		public new event Common.Forms.KeyEventHandler KeyUp;
-		public new event Common.Forms.LayoutEventHandler Layout;
-		public new event System.EventHandler Leave;
-		public new event System.EventHandler LocationChanged;
-		public new event System.EventHandler LostFocus;
-		public new event System.EventHandler MarginChanged;
-		public new event System.EventHandler MouseCaptureChanged;
-		public new event Common.Forms.MouseEventHandler MouseClick;
-		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
-		public new event Common.Forms.MouseEventHandler MouseDown;
-		public new event System.EventHandler MouseEnter;
-		public new event System.EventHandler MouseHover;
-		public new event System.EventHandler MouseLeave;
-		public new event Common.Forms.MouseEventHandler MouseMove;
-		public new event Common.Forms.MouseEventHandler MouseUp;
-		public new event Common.Forms.MouseEventHandler MouseWheel;
-		public new event System.EventHandler Move;
-		public new event System.EventHandler PaddingChanged;
-		public new event Common.Forms.PaintEventHandler Paint;
-		public new event System.EventHandler ParentChanged;
-		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
-		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
-		public new event System.EventHandler RegionChanged;
-		public new event System.EventHandler Resize;
-		public new event System.EventHandler RightToLeftChanged;
-		public new event Common.Forms.ScrollEventHandler Scroll;
-		public new event System.EventHandler SizeChanged;
-		public new event System.EventHandler StyleChanged;
-		public new event System.EventHandler SystemColorsChanged;
-		public new event System.EventHandler TabIndexChanged;
-		public new event System.EventHandler TabStopChanged;
-		public new event System.EventHandler TextChanged;
-		public new event System.EventHandler Validated;
-		public new event System.ComponentModel.CancelEventHandler Validating;
-		public new event System.EventHandler VisibleChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void onPaint (System.Windows.Forms.PaintEventArgs e) { base.onPaint(e);}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void onPaintBackground (System.Windows.Forms.PaintEventArgs e) { base.onPaintBackground(e);}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void FireMouseDown (System.Object sender , System.Windows.Forms.MouseEventArgs e) { base.FireMouseDown(sender , e);}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void FireMouseUp (System.Object sender , System.Windows.Forms.MouseEventArgs e) { base.FireMouseUp(sender , e);}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void FireMouseMove (System.Object sender , System.Windows.Forms.MouseEventArgs e) { base.FireMouseMove(sender , e);}
-		#endregion
-	}
-	
-	public  partial class Label : System.Windows.Forms.Label
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.String[] Lines {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Lines;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new ScrollBars ScrollBars { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ScrollBars;}set{throw new NotImplementedException();}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.Boolean Multiline {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Multiline;}set{throw new NotImplementedException();}}
-		#endregion
-		#endregion
-		#region Events
-		public new event System.EventHandler AutoSizeChanged;
-		public new event System.EventHandler BackColorChanged;
-		public new event System.EventHandler BackgroundImageChanged;
-		public new event System.EventHandler BackgroundImageLayoutChanged;
-		public new event System.EventHandler BindingContextChanged;
-		public new event System.EventHandler CausesValidationChanged;
-		public new event Common.Forms.UICuesEventHandler ChangeUICues;
-		public new event System.EventHandler Click;
-		public new event System.EventHandler ClientSizeChanged;
-		public new event System.EventHandler ContextMenuChanged;
-		public new event System.EventHandler ContextMenuStripChanged;
-		public new event Common.Forms.ControlEventHandler ControlAdded;
-		public new event Common.Forms.ControlEventHandler ControlRemoved;
-		public new event System.EventHandler CursorChanged;
-		public new event System.EventHandler Disposed;
-		public new event System.EventHandler DockChanged;
-		public new event System.EventHandler DoubleClick;
-		public new event Common.Forms.DragEventHandler DragDrop;
-		public new event Common.Forms.DragEventHandler DragEnter;
-		public new event System.EventHandler DragLeave;
-		public new event Common.Forms.DragEventHandler DragOver;
-		public new event System.EventHandler EnabledChanged;
-		public new event System.EventHandler Enter;
-		public new event System.EventHandler FontChanged;
-		public new event System.EventHandler ForeColorChanged;
-		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
-		public new event System.EventHandler GotFocus;
-		public new event System.EventHandler HandleCreated;
-		public new event System.EventHandler HandleDestroyed;
-		public new event Common.Forms.HelpEventHandler HelpRequested;
-		public new event System.EventHandler ImeModeChanged;
-		public new event Common.Forms.InvalidateEventHandler Invalidated;
-		public new event Common.Forms.KeyEventHandler KeyDown;
-		public new event Common.Forms.KeyPressEventHandler KeyPress;
-		public new event Common.Forms.KeyEventHandler KeyUp;
-		public new event Common.Forms.LayoutEventHandler Layout;
-		public new event System.EventHandler Leave;
-		public new event System.EventHandler LocationChanged;
-		public new event System.EventHandler LostFocus;
-		public new event System.EventHandler MarginChanged;
-		public new event System.EventHandler MouseCaptureChanged;
-		public new event Common.Forms.MouseEventHandler MouseClick;
-		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
-		public new event Common.Forms.MouseEventHandler MouseDown;
-		public new event System.EventHandler MouseEnter;
-		public new event System.EventHandler MouseHover;
-		public new event System.EventHandler MouseLeave;
-		public new event Common.Forms.MouseEventHandler MouseMove;
-		public new event Common.Forms.MouseEventHandler MouseUp;
-		public new event Common.Forms.MouseEventHandler MouseWheel;
-		public new event System.EventHandler Move;
-		public new event System.EventHandler PaddingChanged;
-		public new event Common.Forms.PaintEventHandler Paint;
-		public new event System.EventHandler ParentChanged;
-		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
-		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
-		public new event System.EventHandler RegionChanged;
-		public new event System.EventHandler Resize;
-		public new event System.EventHandler RightToLeftChanged;
-		public new event System.EventHandler SizeChanged;
-		public new event System.EventHandler StyleChanged;
-		public new event System.EventHandler SystemColorsChanged;
-		public new event System.EventHandler TabIndexChanged;
-		public new event System.EventHandler TabStopChanged;
-		public new event System.EventHandler TextChanged;
-		public new event System.EventHandler Validated;
-		public new event System.ComponentModel.CancelEventHandler Validating;
-		public new event System.EventHandler VisibleChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
-	public  partial class CheckBox : System.Windows.Forms.CheckBox
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new DialogResult DialogResult { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.DialogResult;}set{throw new NotImplementedException();}}
-		#endregion
-		#endregion
-		#region Events
-		public new event System.EventHandler AutoSizeChanged;
-		public new event System.EventHandler BackColorChanged;
-		public new event System.EventHandler BackgroundImageChanged;
-		public new event System.EventHandler BackgroundImageLayoutChanged;
-		public new event System.EventHandler BindingContextChanged;
-		public new event System.EventHandler CausesValidationChanged;
-		public new event Common.Forms.UICuesEventHandler ChangeUICues;
-		public new event System.EventHandler Click;
-		public new event System.EventHandler ClientSizeChanged;
-		public new event System.EventHandler ContextMenuChanged;
-		public new event System.EventHandler ContextMenuStripChanged;
-		public new event Common.Forms.ControlEventHandler ControlAdded;
-		public new event Common.Forms.ControlEventHandler ControlRemoved;
-		public new event System.EventHandler CursorChanged;
-		public new event System.EventHandler Disposed;
-		public new event System.EventHandler DockChanged;
-		public new event System.EventHandler DoubleClick;
-		public new event Common.Forms.DragEventHandler DragDrop;
-		public new event Common.Forms.DragEventHandler DragEnter;
-		public new event System.EventHandler DragLeave;
-		public new event Common.Forms.DragEventHandler DragOver;
-		public new event System.EventHandler EnabledChanged;
-		public new event System.EventHandler Enter;
-		public new event System.EventHandler FontChanged;
-		public new event System.EventHandler ForeColorChanged;
-		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
-		public new event System.EventHandler GotFocus;
-		public new event System.EventHandler HandleCreated;
-		public new event System.EventHandler HandleDestroyed;
-		public new event Common.Forms.HelpEventHandler HelpRequested;
-		public new event System.EventHandler ImeModeChanged;
-		public new event Common.Forms.InvalidateEventHandler Invalidated;
-		public new event Common.Forms.KeyEventHandler KeyDown;
-		public new event Common.Forms.KeyPressEventHandler KeyPress;
-		public new event Common.Forms.KeyEventHandler KeyUp;
-		public new event Common.Forms.LayoutEventHandler Layout;
-		public new event System.EventHandler Leave;
-		public new event System.EventHandler LocationChanged;
-		public new event System.EventHandler LostFocus;
-		public new event System.EventHandler MarginChanged;
-		public new event System.EventHandler MouseCaptureChanged;
-		public new event Common.Forms.MouseEventHandler MouseClick;
-		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
-		public new event Common.Forms.MouseEventHandler MouseDown;
-		public new event System.EventHandler MouseEnter;
-		public new event System.EventHandler MouseHover;
-		public new event System.EventHandler MouseLeave;
-		public new event Common.Forms.MouseEventHandler MouseMove;
-		public new event Common.Forms.MouseEventHandler MouseUp;
-		public new event Common.Forms.MouseEventHandler MouseWheel;
-		public new event System.EventHandler Move;
-		public new event System.EventHandler PaddingChanged;
-		public new event Common.Forms.PaintEventHandler Paint;
-		public new event System.EventHandler ParentChanged;
-		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
-		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
-		public new event System.EventHandler RegionChanged;
-		public new event System.EventHandler Resize;
-		public new event System.EventHandler RightToLeftChanged;
-		public new event System.EventHandler SizeChanged;
-		public new event System.EventHandler StyleChanged;
-		public new event System.EventHandler SystemColorsChanged;
-		public new event System.EventHandler TabIndexChanged;
-		public new event System.EventHandler TabStopChanged;
-		public new event System.EventHandler TextChanged;
-		public new event System.EventHandler Validated;
-		public new event System.ComponentModel.CancelEventHandler Validating;
-		public new event System.EventHandler VisibleChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		#endregion
-	}
-	
 	public  partial class CheckedListBox : System.Windows.Forms.CheckedListBox
 	{
 		#region Constructors
@@ -1997,113 +1166,6 @@ namespace Common.Forms
 		#region Excluded Methods
 		[Obsolete("This method is not cross-platform compatible.", true)]
 		public   override void SetupColumn () { base.SetupColumn();}
-		#endregion
-	}
-	
-	public  partial class ListBox : System.Windows.Forms.ListBox
-	{
-		#region Constructors
-		#endregion
-		#region Fields
-		#region Exluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSTableView tableView;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSTableColumn column;
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.Foundation.NSString colString;
-		#endregion
-		#endregion
-		#region Properties
-		#region Excluded
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new MonoMac.AppKit.NSView CurrentEditor {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.CurrentEditor;}}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public new System.EventHandler SelectedValueChanged {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.SelectedValueChanged;}set{throw new NotImplementedException();}}
-		#endregion
-		#endregion
-		#region Events
-		public new event System.EventHandler AutoSizeChanged;
-		public new event System.EventHandler BackColorChanged;
-		public new event System.EventHandler BackgroundImageChanged;
-		public new event System.EventHandler BackgroundImageLayoutChanged;
-		public new event System.EventHandler BindingContextChanged;
-		public new event System.EventHandler CausesValidationChanged;
-		public new event Common.Forms.UICuesEventHandler ChangeUICues;
-		public new event System.EventHandler Click;
-		public new event System.EventHandler ClientSizeChanged;
-		public new event System.EventHandler ContextMenuChanged;
-		public new event System.EventHandler ContextMenuStripChanged;
-		public new event Common.Forms.ControlEventHandler ControlAdded;
-		public new event Common.Forms.ControlEventHandler ControlRemoved;
-		public new event System.EventHandler CursorChanged;
-		public new event System.EventHandler Disposed;
-		public new event System.EventHandler DockChanged;
-		public new event System.EventHandler DoubleClick;
-		public new event Common.Forms.DragEventHandler DragDrop;
-		public new event Common.Forms.DragEventHandler DragEnter;
-		public new event System.EventHandler DragLeave;
-		public new event Common.Forms.DragEventHandler DragOver;
-		public new event System.EventHandler EnabledChanged;
-		public new event System.EventHandler Enter;
-		public new event System.EventHandler FontChanged;
-		public new event System.EventHandler ForeColorChanged;
-		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
-		public new event System.EventHandler GotFocus;
-		public new event System.EventHandler HandleCreated;
-		public new event System.EventHandler HandleDestroyed;
-		public new event Common.Forms.HelpEventHandler HelpRequested;
-		public new event System.EventHandler ImeModeChanged;
-		public new event Common.Forms.InvalidateEventHandler Invalidated;
-		public new event Common.Forms.KeyEventHandler KeyDown;
-		public new event Common.Forms.KeyPressEventHandler KeyPress;
-		public new event Common.Forms.KeyEventHandler KeyUp;
-		public new event Common.Forms.LayoutEventHandler Layout;
-		public new event System.EventHandler Leave;
-		public new event System.EventHandler LocationChanged;
-		public new event System.EventHandler LostFocus;
-		public new event System.EventHandler MarginChanged;
-		public new event System.EventHandler MouseCaptureChanged;
-		public new event Common.Forms.MouseEventHandler MouseClick;
-		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
-		public new event Common.Forms.MouseEventHandler MouseDown;
-		public new event System.EventHandler MouseEnter;
-		public new event System.EventHandler MouseHover;
-		public new event System.EventHandler MouseLeave;
-		public new event Common.Forms.MouseEventHandler MouseMove;
-		public new event Common.Forms.MouseEventHandler MouseUp;
-		public new event Common.Forms.MouseEventHandler MouseWheel;
-		public new event System.EventHandler Move;
-		public new event System.EventHandler PaddingChanged;
-		public new event Common.Forms.PaintEventHandler Paint;
-		public new event System.EventHandler ParentChanged;
-		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
-		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
-		public new event System.EventHandler RegionChanged;
-		public new event System.EventHandler Resize;
-		public new event System.EventHandler RightToLeftChanged;
-		public new event System.EventHandler SizeChanged;
-		public new event System.EventHandler StyleChanged;
-		public new event System.EventHandler SystemColorsChanged;
-		public new event System.EventHandler TabIndexChanged;
-		public new event System.EventHandler TabStopChanged;
-		public new event System.EventHandler TextChanged;
-		public new event System.EventHandler Validated;
-		public new event System.ComponentModel.CancelEventHandler Validating;
-		public new event System.EventHandler VisibleChanged;
-		#region Excluded
-		#endregion
-		#endregion
-		#region Excluded Methods
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override void SetupTable () { base.SetupTable();}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override void SetupColumn () { base.SetupColumn();}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   override void SetNeedsDisplay () { base.SetNeedsDisplay();}
-		[Obsolete("This method is not cross-platform compatible.", true)]
-		public   new void CollectionChanged () { base.CollectionChanged();}
 		#endregion
 	}
 	
@@ -2684,6 +1746,406 @@ namespace Common.Forms
 		#endregion
 	}
 	
+	public  partial class ContainerControl : System.Windows.Forms.ContainerControl
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler AutoSizeChanged;
+		public new event System.EventHandler AutoValidateChanged;
+		public new event System.EventHandler BackColorChanged;
+		public new event System.EventHandler BackgroundImageChanged;
+		public new event System.EventHandler BackgroundImageLayoutChanged;
+		public new event System.EventHandler BindingContextChanged;
+		public new event System.EventHandler CausesValidationChanged;
+		public new event Common.Forms.UICuesEventHandler ChangeUICues;
+		public new event System.EventHandler Click;
+		public new event System.EventHandler ClientSizeChanged;
+		public new event System.EventHandler ContextMenuChanged;
+		public new event System.EventHandler ContextMenuStripChanged;
+		public new event Common.Forms.ControlEventHandler ControlAdded;
+		public new event Common.Forms.ControlEventHandler ControlRemoved;
+		public new event System.EventHandler CursorChanged;
+		public new event System.EventHandler Disposed;
+		public new event System.EventHandler DockChanged;
+		public new event System.EventHandler DoubleClick;
+		public new event Common.Forms.DragEventHandler DragDrop;
+		public new event Common.Forms.DragEventHandler DragEnter;
+		public new event System.EventHandler DragLeave;
+		public new event Common.Forms.DragEventHandler DragOver;
+		public new event System.EventHandler EnabledChanged;
+		public new event System.EventHandler Enter;
+		public new event System.EventHandler FontChanged;
+		public new event System.EventHandler ForeColorChanged;
+		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
+		public new event System.EventHandler GotFocus;
+		public new event System.EventHandler HandleCreated;
+		public new event System.EventHandler HandleDestroyed;
+		public new event Common.Forms.HelpEventHandler HelpRequested;
+		public new event System.EventHandler ImeModeChanged;
+		public new event Common.Forms.InvalidateEventHandler Invalidated;
+		public new event Common.Forms.KeyEventHandler KeyDown;
+		public new event Common.Forms.KeyPressEventHandler KeyPress;
+		public new event Common.Forms.KeyEventHandler KeyUp;
+		public new event Common.Forms.LayoutEventHandler Layout;
+		public new event System.EventHandler Leave;
+		public new event System.EventHandler LocationChanged;
+		public new event System.EventHandler LostFocus;
+		public new event System.EventHandler MarginChanged;
+		public new event System.EventHandler MouseCaptureChanged;
+		public new event Common.Forms.MouseEventHandler MouseClick;
+		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
+		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
+		public new event Common.Forms.MouseEventHandler MouseMove;
+		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
+		public new event System.EventHandler Move;
+		public new event System.EventHandler PaddingChanged;
+		public new event Common.Forms.PaintEventHandler Paint;
+		public new event System.EventHandler ParentChanged;
+		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
+		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
+		public new event System.EventHandler RegionChanged;
+		public new event System.EventHandler Resize;
+		public new event System.EventHandler RightToLeftChanged;
+		public new event Common.Forms.ScrollEventHandler Scroll;
+		public new event System.EventHandler SizeChanged;
+		public new event System.EventHandler StyleChanged;
+		public new event System.EventHandler SystemColorsChanged;
+		public new event System.EventHandler TabIndexChanged;
+		public new event System.EventHandler TabStopChanged;
+		public new event System.EventHandler TextChanged;
+		public new event System.EventHandler Validated;
+		public new event System.ComponentModel.CancelEventHandler Validating;
+		public new event System.EventHandler VisibleChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class ScrollableControl : System.Windows.Forms.ScrollableControl
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler AutoSizeChanged;
+		public new event System.EventHandler BackColorChanged;
+		public new event System.EventHandler BackgroundImageChanged;
+		public new event System.EventHandler BackgroundImageLayoutChanged;
+		public new event System.EventHandler BindingContextChanged;
+		public new event System.EventHandler CausesValidationChanged;
+		public new event Common.Forms.UICuesEventHandler ChangeUICues;
+		public new event System.EventHandler Click;
+		public new event System.EventHandler ClientSizeChanged;
+		public new event System.EventHandler ContextMenuChanged;
+		public new event System.EventHandler ContextMenuStripChanged;
+		public new event Common.Forms.ControlEventHandler ControlAdded;
+		public new event Common.Forms.ControlEventHandler ControlRemoved;
+		public new event System.EventHandler CursorChanged;
+		public new event System.EventHandler Disposed;
+		public new event System.EventHandler DockChanged;
+		public new event System.EventHandler DoubleClick;
+		public new event Common.Forms.DragEventHandler DragDrop;
+		public new event Common.Forms.DragEventHandler DragEnter;
+		public new event System.EventHandler DragLeave;
+		public new event Common.Forms.DragEventHandler DragOver;
+		public new event System.EventHandler EnabledChanged;
+		public new event System.EventHandler Enter;
+		public new event System.EventHandler FontChanged;
+		public new event System.EventHandler ForeColorChanged;
+		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
+		public new event System.EventHandler GotFocus;
+		public new event System.EventHandler HandleCreated;
+		public new event System.EventHandler HandleDestroyed;
+		public new event Common.Forms.HelpEventHandler HelpRequested;
+		public new event System.EventHandler ImeModeChanged;
+		public new event Common.Forms.InvalidateEventHandler Invalidated;
+		public new event Common.Forms.KeyEventHandler KeyDown;
+		public new event Common.Forms.KeyPressEventHandler KeyPress;
+		public new event Common.Forms.KeyEventHandler KeyUp;
+		public new event Common.Forms.LayoutEventHandler Layout;
+		public new event System.EventHandler Leave;
+		public new event System.EventHandler LocationChanged;
+		public new event System.EventHandler LostFocus;
+		public new event System.EventHandler MarginChanged;
+		public new event System.EventHandler MouseCaptureChanged;
+		public new event Common.Forms.MouseEventHandler MouseClick;
+		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
+		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
+		public new event Common.Forms.MouseEventHandler MouseMove;
+		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
+		public new event System.EventHandler Move;
+		public new event System.EventHandler PaddingChanged;
+		public new event Common.Forms.PaintEventHandler Paint;
+		public new event System.EventHandler ParentChanged;
+		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
+		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
+		public new event System.EventHandler RegionChanged;
+		public new event System.EventHandler Resize;
+		public new event System.EventHandler RightToLeftChanged;
+		public new event Common.Forms.ScrollEventHandler Scroll;
+		public new event System.EventHandler SizeChanged;
+		public new event System.EventHandler StyleChanged;
+		public new event System.EventHandler SystemColorsChanged;
+		public new event System.EventHandler TabIndexChanged;
+		public new event System.EventHandler TabStopChanged;
+		public new event System.EventHandler TextChanged;
+		public new event System.EventHandler Validated;
+		public new event System.ComponentModel.CancelEventHandler Validating;
+		public new event System.EventHandler VisibleChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class Timer : System.Windows.Forms.Timer
+	{
+		#region Constructors
+		public Timer () : base ()
+		{
+		}
+		
+		public Timer (System.ComponentModel.IContainer container) : base (container)
+		{
+		}
+		
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler Disposed;
+		public new event System.EventHandler Tick;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class BaseCollection : System.Windows.Forms.BaseCollection
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class Binding : System.Windows.Forms.Binding
+	{
+		#region Constructors
+		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember) : base (propertyName , dataSource , dataMember)
+		{
+		}
+		
+		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled) : base (propertyName , dataSource , dataMember , formattingEnabled)
+		{
+		}
+		
+		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode)
+		{
+		}
+		
+		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode , System.Object nullValue) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode , nullValue)
+		{
+		}
+		
+		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode , System.Object nullValue , System.String formatString) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode , nullValue , formatString)
+		{
+		}
+		
+		public Binding (System.String propertyName , System.Object dataSource , System.String dataMember , System.Boolean formattingEnabled , System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode , System.Object nullValue , System.String formatString , System.IFormatProvider formatInfo) : base (propertyName , dataSource , dataMember , formattingEnabled , dataSourceUpdateMode , nullValue , formatString , formatInfo)
+		{
+		}
+		
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event Common.Forms.BindingCompleteEventHandler BindingComplete;
+		public new event Common.Forms.ConvertEventHandler Format;
+		public new event Common.Forms.ConvertEventHandler Parse;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class BindingContext : System.Windows.Forms.BindingContext
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public abstract partial class BindingManagerBase : System.Windows.Forms.BindingManagerBase
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event Common.Forms.BindingCompleteEventHandler BindingComplete;
+		public new event System.EventHandler CurrentChanged;
+		public new event System.EventHandler CurrentItemChanged;
+		public new event Common.Forms.BindingManagerDataErrorEventHandler DataError;
+		public new event System.EventHandler PositionChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class ControlBindingsCollection : System.Windows.Forms.ControlBindingsCollection
+	{
+		#region Constructors
+		public ControlBindingsCollection (System.Windows.Forms.IBindableComponent control) : base (control)
+		{
+		}
+		
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;
+		public new event System.ComponentModel.CollectionChangeEventHandler CollectionChanging;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public class CurrencyManager
+	{
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public class LayoutSettings
+	{
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class ListBindingConverter : System.Windows.Forms.ListBindingConverter
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public class ListBindingHelper
+	{
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
 	public  partial class PaddingConverter : System.Windows.Forms.PaddingConverter
 	{
 		#region Constructors
@@ -2704,13 +2166,640 @@ namespace Common.Forms
 		#endregion
 	}
 	
-	public class LayoutSettings
+	public  partial class PropertyManager : System.Windows.Forms.PropertyManager
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event Common.Forms.BindingCompleteEventHandler BindingComplete;
+		public new event System.EventHandler CurrentChanged;
+		public new event System.EventHandler CurrentItemChanged;
+		public new event Common.Forms.BindingManagerDataErrorEventHandler DataError;
+		public new event System.EventHandler PositionChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class ScrollEventArgs : System.Windows.Forms.ScrollEventArgs
+	{
+		#region Constructors
+		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 newValue) : base (type , newValue)
+		{
+		}
+		
+		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 oldValue , System.Int32 newValue) : base (type , oldValue , newValue)
+		{
+		}
+		
+		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 newValue , System.Windows.Forms.ScrollOrientation scroll) : base (type , newValue , scroll)
+		{
+		}
+		
+		public ScrollEventArgs (System.Windows.Forms.ScrollEventType type , System.Int32 oldValue , System.Int32 newValue , System.Windows.Forms.ScrollOrientation scroll) : base (type , oldValue , newValue , scroll)
+		{
+		}
+		
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public delegate void  ScrollEventHandler (System.Object sender , System.Windows.Forms.ScrollEventArgs e );
+	
+	public class ArrangedElementCollection
 	{
 		#region Properties
 		#region Excluded
 		#endregion
 		#endregion
 		#region Excluded Methods
+		#endregion
+	}
+	
+	public class LayoutEngine
+	{
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public class ButtonBase
+	{
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class CheckBox : System.Windows.Forms.CheckBox
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler AppearanceChanged;
+		public new event System.EventHandler AutoSizeChanged;
+		public new event System.EventHandler BackColorChanged;
+		public new event System.EventHandler BackgroundImageChanged;
+		public new event System.EventHandler BackgroundImageLayoutChanged;
+		public new event System.EventHandler BindingContextChanged;
+		public new event System.EventHandler CausesValidationChanged;
+		public new event Common.Forms.UICuesEventHandler ChangeUICues;
+		public new event System.EventHandler CheckedChanged;
+		public new event System.EventHandler CheckStateChanged;
+		public new event System.EventHandler Click;
+		public new event System.EventHandler ClientSizeChanged;
+		public new event System.EventHandler ContextMenuChanged;
+		public new event System.EventHandler ContextMenuStripChanged;
+		public new event Common.Forms.ControlEventHandler ControlAdded;
+		public new event Common.Forms.ControlEventHandler ControlRemoved;
+		public new event System.EventHandler CursorChanged;
+		public new event System.EventHandler Disposed;
+		public new event System.EventHandler DockChanged;
+		public new event System.EventHandler DoubleClick;
+		public new event Common.Forms.DragEventHandler DragDrop;
+		public new event Common.Forms.DragEventHandler DragEnter;
+		public new event System.EventHandler DragLeave;
+		public new event Common.Forms.DragEventHandler DragOver;
+		public new event System.EventHandler EnabledChanged;
+		public new event System.EventHandler Enter;
+		public new event System.EventHandler FontChanged;
+		public new event System.EventHandler ForeColorChanged;
+		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
+		public new event System.EventHandler GotFocus;
+		public new event System.EventHandler HandleCreated;
+		public new event System.EventHandler HandleDestroyed;
+		public new event Common.Forms.HelpEventHandler HelpRequested;
+		public new event System.EventHandler ImeModeChanged;
+		public new event Common.Forms.InvalidateEventHandler Invalidated;
+		public new event Common.Forms.KeyEventHandler KeyDown;
+		public new event Common.Forms.KeyPressEventHandler KeyPress;
+		public new event Common.Forms.KeyEventHandler KeyUp;
+		public new event Common.Forms.LayoutEventHandler Layout;
+		public new event System.EventHandler Leave;
+		public new event System.EventHandler LocationChanged;
+		public new event System.EventHandler LostFocus;
+		public new event System.EventHandler MarginChanged;
+		public new event System.EventHandler MouseCaptureChanged;
+		public new event Common.Forms.MouseEventHandler MouseClick;
+		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
+		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
+		public new event Common.Forms.MouseEventHandler MouseMove;
+		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
+		public new event System.EventHandler Move;
+		public new event System.EventHandler PaddingChanged;
+		public new event Common.Forms.PaintEventHandler Paint;
+		public new event System.EventHandler ParentChanged;
+		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
+		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
+		public new event System.EventHandler RegionChanged;
+		public new event System.EventHandler Resize;
+		public new event System.EventHandler RightToLeftChanged;
+		public new event System.EventHandler SizeChanged;
+		public new event System.EventHandler StyleChanged;
+		public new event System.EventHandler SystemColorsChanged;
+		public new event System.EventHandler TabIndexChanged;
+		public new event System.EventHandler TabStopChanged;
+		public new event System.EventHandler TextChanged;
+		public new event System.EventHandler Validated;
+		public new event System.ComponentModel.CancelEventHandler Validating;
+		public new event System.EventHandler VisibleChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public class ListControl
+	{
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class ListControlConvertEventArgs : System.Windows.Forms.ListControlConvertEventArgs
+	{
+		#region Constructors
+		public ListControlConvertEventArgs (System.Object value , System.Type desiredType , System.Object listItem) : base (value , desiredType , listItem)
+		{
+		}
+		
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public delegate void  ListControlConvertEventHandler (System.Object sender , System.Windows.Forms.ListControlConvertEventArgs e );
+	
+	public  partial class AutoCompleteStringCollection : System.Windows.Forms.AutoCompleteStringCollection
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		public new event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class MeasureItemEventArgs : System.Windows.Forms.MeasureItemEventArgs
+	{
+		#region Constructors
+		public MeasureItemEventArgs (System.Drawing.Graphics graphics , System.Int32 index) : base (graphics , index)
+		{
+		}
+		
+		public MeasureItemEventArgs (System.Drawing.Graphics graphics , System.Int32 index , System.Int32 itemHeight) : base (graphics , index , itemHeight)
+		{
+		}
+		
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		#endregion
+		#endregion
+		#region Events
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public delegate void  MeasureItemEventHandler (System.Object sender , System.Windows.Forms.MeasureItemEventArgs e );
+	
+	public  partial class Form : System.Windows.Forms.Form
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.PaintEventHandler Paint {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Paint;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Object components {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.components;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.EventHandler Load {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Load;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new BorderStyle BorderStyle { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.BorderStyle;}set{throw new NotImplementedException();}}
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler AutoSizeChanged;
+		public new event System.EventHandler AutoValidateChanged;
+		public new event System.EventHandler BackColorChanged;
+		public new event System.EventHandler BackgroundImageChanged;
+		public new event System.EventHandler BackgroundImageLayoutChanged;
+		public new event System.EventHandler BindingContextChanged;
+		public new event System.EventHandler CausesValidationChanged;
+		public new event Common.Forms.UICuesEventHandler ChangeUICues;
+		public new event System.EventHandler Click;
+		public new event System.EventHandler ClientSizeChanged;
+		public new event System.EventHandler ContextMenuChanged;
+		public new event System.EventHandler ContextMenuStripChanged;
+		public new event Common.Forms.ControlEventHandler ControlAdded;
+		public new event Common.Forms.ControlEventHandler ControlRemoved;
+		public new event System.EventHandler CursorChanged;
+		public new event System.EventHandler Disposed;
+		public new event System.EventHandler DockChanged;
+		public new event System.EventHandler DoubleClick;
+		public new event Common.Forms.DragEventHandler DragDrop;
+		public new event Common.Forms.DragEventHandler DragEnter;
+		public new event System.EventHandler DragLeave;
+		public new event Common.Forms.DragEventHandler DragOver;
+		public new event System.EventHandler EnabledChanged;
+		public new event System.EventHandler Enter;
+		public new event System.EventHandler FontChanged;
+		public new event System.EventHandler ForeColorChanged;
+		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
+		public new event System.EventHandler GotFocus;
+		public new event System.EventHandler HandleCreated;
+		public new event System.EventHandler HandleDestroyed;
+		public new event Common.Forms.HelpEventHandler HelpRequested;
+		public new event System.EventHandler ImeModeChanged;
+		public new event Common.Forms.InvalidateEventHandler Invalidated;
+		public new event Common.Forms.KeyEventHandler KeyDown;
+		public new event Common.Forms.KeyPressEventHandler KeyPress;
+		public new event Common.Forms.KeyEventHandler KeyUp;
+		public new event Common.Forms.LayoutEventHandler Layout;
+		public new event System.EventHandler Leave;
+		public new event System.EventHandler LocationChanged;
+		public new event System.EventHandler LostFocus;
+		public new event System.EventHandler MarginChanged;
+		public new event System.EventHandler MouseCaptureChanged;
+		public new event Common.Forms.MouseEventHandler MouseClick;
+		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
+		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
+		public new event Common.Forms.MouseEventHandler MouseMove;
+		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
+		public new event System.EventHandler Move;
+		public new event System.EventHandler PaddingChanged;
+		public new event Common.Forms.PaintEventHandler Paint;
+		public new event System.EventHandler ParentChanged;
+		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
+		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
+		public new event System.EventHandler RegionChanged;
+		public new event System.EventHandler Resize;
+		public new event System.EventHandler RightToLeftChanged;
+		public new event Common.Forms.ScrollEventHandler Scroll;
+		public new event System.EventHandler SizeChanged;
+		public new event System.EventHandler StyleChanged;
+		public new event System.EventHandler SystemColorsChanged;
+		public new event System.EventHandler TabIndexChanged;
+		public new event System.EventHandler TabStopChanged;
+		public new event System.EventHandler TextChanged;
+		public new event System.EventHandler Validated;
+		public new event System.ComponentModel.CancelEventHandler Validating;
+		public new event System.EventHandler VisibleChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new void onPaint (System.Windows.Forms.PaintEventArgs e) { base.onPaint(e);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new void onPaintBackground (System.Windows.Forms.PaintEventArgs e) { base.onPaintBackground(e);}
+		#endregion
+	}
+	
+	public  partial class Label : System.Windows.Forms.Label
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String[] Lines {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Lines;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new ScrollBars ScrollBars { get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.ScrollBars;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean Multiline {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.Multiline;}set{throw new NotImplementedException();}}
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler AutoSizeChanged;
+		public new event System.EventHandler BackColorChanged;
+		public new event System.EventHandler BackgroundImageChanged;
+		public new event System.EventHandler BackgroundImageLayoutChanged;
+		public new event System.EventHandler BindingContextChanged;
+		public new event System.EventHandler CausesValidationChanged;
+		public new event Common.Forms.UICuesEventHandler ChangeUICues;
+		public new event System.EventHandler Click;
+		public new event System.EventHandler ClientSizeChanged;
+		public new event System.EventHandler ContextMenuChanged;
+		public new event System.EventHandler ContextMenuStripChanged;
+		public new event Common.Forms.ControlEventHandler ControlAdded;
+		public new event Common.Forms.ControlEventHandler ControlRemoved;
+		public new event System.EventHandler CursorChanged;
+		public new event System.EventHandler Disposed;
+		public new event System.EventHandler DockChanged;
+		public new event System.EventHandler DoubleClick;
+		public new event Common.Forms.DragEventHandler DragDrop;
+		public new event Common.Forms.DragEventHandler DragEnter;
+		public new event System.EventHandler DragLeave;
+		public new event Common.Forms.DragEventHandler DragOver;
+		public new event System.EventHandler EnabledChanged;
+		public new event System.EventHandler Enter;
+		public new event System.EventHandler FontChanged;
+		public new event System.EventHandler ForeColorChanged;
+		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
+		public new event System.EventHandler GotFocus;
+		public new event System.EventHandler HandleCreated;
+		public new event System.EventHandler HandleDestroyed;
+		public new event Common.Forms.HelpEventHandler HelpRequested;
+		public new event System.EventHandler ImeModeChanged;
+		public new event Common.Forms.InvalidateEventHandler Invalidated;
+		public new event Common.Forms.KeyEventHandler KeyDown;
+		public new event Common.Forms.KeyPressEventHandler KeyPress;
+		public new event Common.Forms.KeyEventHandler KeyUp;
+		public new event Common.Forms.LayoutEventHandler Layout;
+		public new event System.EventHandler Leave;
+		public new event System.EventHandler LocationChanged;
+		public new event System.EventHandler LostFocus;
+		public new event System.EventHandler MarginChanged;
+		public new event System.EventHandler MouseCaptureChanged;
+		public new event Common.Forms.MouseEventHandler MouseClick;
+		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
+		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
+		public new event Common.Forms.MouseEventHandler MouseMove;
+		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
+		public new event System.EventHandler Move;
+		public new event System.EventHandler PaddingChanged;
+		public new event Common.Forms.PaintEventHandler Paint;
+		public new event System.EventHandler ParentChanged;
+		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
+		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
+		public new event System.EventHandler RegionChanged;
+		public new event System.EventHandler Resize;
+		public new event System.EventHandler RightToLeftChanged;
+		public new event System.EventHandler SizeChanged;
+		public new event System.EventHandler StyleChanged;
+		public new event System.EventHandler SystemColorsChanged;
+		public new event System.EventHandler TabIndexChanged;
+		public new event System.EventHandler TabStopChanged;
+		public new event System.EventHandler TextChanged;
+		public new event System.EventHandler Validated;
+		public new event System.ComponentModel.CancelEventHandler Validating;
+		public new event System.EventHandler VisibleChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		#endregion
+	}
+	
+	public  partial class ListBox : System.Windows.Forms.ListBox
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSTableView tableView;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSTableColumn column;
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.Foundation.NSString colString;
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSView CurrentEditor {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.CurrentEditor;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.EventHandler SelectedValueChanged {get{   if( !this.DesignMode ) throw new NotImplementedException(); return  base.SelectedValueChanged;}set{throw new NotImplementedException();}}
+		#endregion
+		#endregion
+		#region Events
+		public new event System.EventHandler AutoSizeChanged;
+		public new event System.EventHandler BackColorChanged;
+		public new event System.EventHandler BackgroundImageChanged;
+		public new event System.EventHandler BackgroundImageLayoutChanged;
+		public new event System.EventHandler BindingContextChanged;
+		public new event System.EventHandler CausesValidationChanged;
+		public new event Common.Forms.UICuesEventHandler ChangeUICues;
+		public new event System.EventHandler Click;
+		public new event System.EventHandler ClientSizeChanged;
+		public new event System.EventHandler ContextMenuChanged;
+		public new event System.EventHandler ContextMenuStripChanged;
+		public new event Common.Forms.ControlEventHandler ControlAdded;
+		public new event Common.Forms.ControlEventHandler ControlRemoved;
+		public new event System.EventHandler CursorChanged;
+		public new event System.EventHandler Disposed;
+		public new event System.EventHandler DockChanged;
+		public new event System.EventHandler DoubleClick;
+		public new event Common.Forms.DragEventHandler DragDrop;
+		public new event Common.Forms.DragEventHandler DragEnter;
+		public new event System.EventHandler DragLeave;
+		public new event Common.Forms.DragEventHandler DragOver;
+		public new event System.EventHandler EnabledChanged;
+		public new event System.EventHandler Enter;
+		public new event System.EventHandler FontChanged;
+		public new event System.EventHandler ForeColorChanged;
+		public new event Common.Forms.GiveFeedbackEventHandler GiveFeedback;
+		public new event System.EventHandler GotFocus;
+		public new event System.EventHandler HandleCreated;
+		public new event System.EventHandler HandleDestroyed;
+		public new event Common.Forms.HelpEventHandler HelpRequested;
+		public new event System.EventHandler ImeModeChanged;
+		public new event Common.Forms.InvalidateEventHandler Invalidated;
+		public new event Common.Forms.KeyEventHandler KeyDown;
+		public new event Common.Forms.KeyPressEventHandler KeyPress;
+		public new event Common.Forms.KeyEventHandler KeyUp;
+		public new event Common.Forms.LayoutEventHandler Layout;
+		public new event System.EventHandler Leave;
+		public new event System.EventHandler LocationChanged;
+		public new event System.EventHandler LostFocus;
+		public new event System.EventHandler MarginChanged;
+		public new event System.EventHandler MouseCaptureChanged;
+		public new event Common.Forms.MouseEventHandler MouseClick;
+		public new event Common.Forms.MouseEventHandler MouseDoubleClick;
+		public new event Common.Forms.MouseEventHandler MouseDown;
+		public new event System.EventHandler MouseEnter;
+		public new event System.EventHandler MouseHover;
+		public new event System.EventHandler MouseLeave;
+		public new event Common.Forms.MouseEventHandler MouseMove;
+		public new event Common.Forms.MouseEventHandler MouseUp;
+		public new event Common.Forms.MouseEventHandler MouseWheel;
+		public new event System.EventHandler Move;
+		public new event System.EventHandler PaddingChanged;
+		public new event Common.Forms.PaintEventHandler Paint;
+		public new event System.EventHandler ParentChanged;
+		public new event Common.Forms.PreviewKeyDownEventHandler PreviewKeyDown;
+		public new event Common.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+		public new event Common.Forms.QueryContinueDragEventHandler QueryContinueDrag;
+		public new event System.EventHandler RegionChanged;
+		public new event System.EventHandler Resize;
+		public new event System.EventHandler RightToLeftChanged;
+		public new event System.EventHandler SizeChanged;
+		public new event System.EventHandler StyleChanged;
+		public new event System.EventHandler SystemColorsChanged;
+		public new event System.EventHandler TabIndexChanged;
+		public new event System.EventHandler TabStopChanged;
+		public new event System.EventHandler TextChanged;
+		public new event System.EventHandler Validated;
+		public new event System.ComponentModel.CancelEventHandler Validating;
+		public new event System.EventHandler VisibleChanged;
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override void SetupTable () { base.SetupTable();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override void SetupColumn () { base.SetupColumn();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   override void SetNeedsDisplay () { base.SetNeedsDisplay();}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new void CollectionChanged () { base.CollectionChanged();}
+		#endregion
+	}
+	
+	public  partial class MessageBox : System.Windows.Forms.MessageBox
+	{
+		#region Constructors
+		#endregion
+		#region Fields
+		#region Exluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Windows.Forms.DialogResult result;
+		#endregion
+		#endregion
+		#region Properties
+		#region Excluded
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.IntPtr ClassHandle {get{  return  base.ClassHandle;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String MessageText {get{  return  base.MessageText;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String InformativeText {get{  return  base.InformativeText;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSImage Icon {get{  return  base.Icon;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSButton[] Buttons {get{  return  base.Buttons;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean ShowsHelp {get{  return  base.ShowsHelp;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.String HelpAnchor {get{  return  base.HelpAnchor;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new NSAlertStyle AlertStyle { get{  return  base.AlertStyle;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSAlertDelegate Delegate {get{  return  base.Delegate;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.Boolean ShowsSuppressionButton {get{  return  base.ShowsSuppressionButton;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSButton SuppressionButton {get{  return  base.SuppressionButton;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSView AccessoryView {get{  return  base.AccessoryView;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.Foundation.NSObject Window {get{  return  base.Window;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new MonoMac.AppKit.NSAlertPredicate ShowHelp {get{  return  base.ShowHelp;}set{throw new NotImplementedException();}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.IntPtr SuperHandle {get{  return  base.SuperHandle;}}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public new System.IntPtr Handle {get{  return  base.Handle;}set{throw new NotImplementedException();}}
+		#endregion
+		#endregion
+		#region Events
+		#region Excluded
+		#endregion
+		#endregion
+		#region Excluded Methods
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public static  new System.Windows.Forms.DialogResult GetResult (System.Int32 result , System.Windows.Forms.MessageBoxButtons buttons) {return System.Windows.Forms.MessageBox.GetResult(result , buttons);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new void SetupIcon (System.Windows.Forms.MessageBoxIcon icon) { base.SetupIcon(icon);}
+		[Obsolete("This method is not cross-platform compatible.", true)]
+		public   new void SetupButtons (System.Windows.Forms.MessageBoxButtons buttons) { base.SetupButtons(buttons);}
 		#endregion
 	}
 	
